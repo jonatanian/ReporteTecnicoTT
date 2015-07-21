@@ -1,7 +1,119 @@
 \section{Propuesta}
 
+Con base en los problemas expresados, proponemos una aplicación web que esté conformada con los siguientes módulos. \\ 
+
+	\begin{figure}[htbp!]
+		\centering
+			\includegraphics[width=0.8\textwidth]{images/diagramabloques}
+		\caption{Diagrama de Bloques de la Aplicación.}
+	\end{figure}
+
+\subsection{Descripción de Módulos}
+
+\subsubsection{Control de acceso}
+
+Este módulo sirve para restringir el acceso a usuarios dentro de la aplicación para que puedan acceder a todas sus funciones. Cuenta con una pantalla que tiene un formulario de autenticación donde se le solicita al usuario su correo institucional y su contraseña. Cuando el usuario ingresa sus credenciales la aplicación verifica su correo y su contraseña; si existen entonces la aplicación muestra la pantalla principal de acuerdo al tipo de usuario que sea. En caso contrario, la aplicación regresa a la pantalla de autenticación con un mensaje de error diciendo que los datos introducidos no son válidos.\\
+
+\subsubsection{Gestión de usuarios}
+Es el módulo donde se encuentra alojada la información del personal del CMPL que tendrá acceso a SISA, que son el personal administrativo y de apoyo; la información almacenada del personal del CMPL en este módulo es: nombre, apellido paterno, apellido materno, nivel de estudios, departamento al que pertenece, extensión, correo institucional y contraseña. Sirve para mostrar una pantalla con el directorio interno del CMPL, modificar los datos del personal, incluyendo la contraseña.\\
+
+\subsubsection{Correspondencia (Oficios y Memorándums)}
+
+Este módulo contiene las pantallas de registro de correspondencia del CMPL, tanto oficios como memorándums, con un formulario que contiene los siguientes campos: número de oficio, fecha de redacción, área que emite, emisor, cargo del emisor, destinatario, cargo del destinatario, dependencia, asunto, fecha de acuse, nombre de quien entrega y si requiere o no respuesta. También cuenta con un selector de archivos que permite la carga del documento escaneado en formato PDF y adjuntarlo al registro. Tiene, además, una pantalla donde se pueden consultar todos los oficios y memorándums enviados y recibidos, por ID, asunto, emisor, cargos de emisor, fecha de recibido, fecha de acuse, dependencia que emite, nombre de quien entrega, pendientes, en espera o un concentrado de todos los oficios y todos los memorándums.\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%ROLES DE USUARIOS%%%%%%%%%%%
+\subsection{Descripción de roles de usuarios}
+
+\subsubsection{Administrador}
+Es el jefe del Departamento de Sistemas y Banco de Datos del CMPL. Tiene el control total de la administración de la información mostrada en la aplicación web.\\
+
+\textbf{Responsabilidades:}
+\begin{itemize}
+	\item Dar de alta nuevos usuarios.
+	\item Editar usuarios existentes.
+	\item Eliminar usuarios.
+	\item Registrar correspondencia saliente (oficios y memorándums).
+	\item Consultar correspondencia.
+	\item Dar seguimiento a su correspondencia.
+\end{itemize}
+
+\subsubsection{Oficialía de Partes}
+Es la persona que lleva a cabo la recepción de correspondencia formal del CMPL. Recibe los documentos de correspondencia y los registra en una bitácora; firma y sella de recibido y turna los oficios y memos a sus respectivos destinatarios.\\
+
+\textbf{Responsabilidades:}
+\begin{itemize}
+	\item Verificar que los documentos recibidos cumplan con todos los lineamientos requeridos para su recepción.
+	\item Registrar la correspondencia formal interna y externa del CMPL.
+	\item Turnar los oficios y memorándums a sus respectivos destinatarios.
+	\item Registrar correspondencia saliente.
+\end{itemize}
+
+\subsubsection{Personal CMPL}
+Es un trabajador del CMPL registrado en el directorio, que no es Jefe del Departamento de Sistemas y Banco de Datos o encargado de Oficialía de Partes.\\
+
+\textbf{Responsabilidades:}
+\begin{itemize}
+	\item Checar su correspondencia entrante.
+	\item Registrar correspondencia saliente.
+	\item Turnar correspondencia.
+	\item Recibir correspondencia.
+	\item Atender observaciones a los oficios registrados.
+\end{itemize}
+
+\subsubsection{Director}
+Es un trabajador del CMPL con el nombramiento de “Director”. Es la persona que representa al centro ante otras dependencias. Se encarga de administrar y gestionar las decisiones importantes del centro junto con su grupo de trabajadores.\\
+
+\textbf{Responsabilidades:}
+\begin{itemize}
+	\item Turnar oficios entrantes.
+	\item Turnar copia de oficios entrantes.
+	\item Firmar oficios salientes.
+	\item Cancelar proceso de oficios entrantes.
+	\item Cancelar proceso de oficios salientes.
+	\item Ver detalles de correspondencia.
+	\item Responder oficios.
+\end{itemize}
+
+\subsubsection{Jefe de Departamento}
+Es un trabajador del CMPL que está como encargado de alguna de las diferentes jefaturas que existen en el centro. Se encarga de apoyar a la dirección con las decisiones importantes para el CMPL y de atender los asuntos que conciernen con el departamento del cual está encargado.\\
+
+\textbf{Responsabilidades:}
+\begin{itemize}
+	\item Atender correspondencia a nombre del director.
+	\item Manejar los indicadores mensuales.
+	\item Cancelar proceso de correspondencia saliente.
+	\item Generar oficios salientes nuevos.
+	\item Dar respuesta a oficios entrantes.
+	\item Atender observaciones a los oficios registrados.
+\end{itemize}
+
+\subsubsection{Subdirector}
+Es un trabajador del CMPL que esta como encargado en alguna de las subdirecciones existentes dentro del centro. Se encarga de las decisiones que conciernen al área y de la administración de dicho departamento. Puede que tenga a su cargo otra jefatura y debe trabajar en conjunto con esta otra área.\\ 
+
+\textbf{Responsabilidades:}
+\begin{itemize}
+	\item Responder oficios entrantes.
+	\item Registrar oficios salientes.
+	\item Turnar correspondencia en caso de que tenga alguna jefatura a su cargo.
+	\item Ver detalles de correspondencia.
+	\item Atender observaciones a los oficios registrados.
+\end{itemize}
+
+
 \subsection{Objetivo}
+
+Nuevo objetivo
 
 \subsection{Justificación}
 
+El objetivo inicial era desarrollar e implementar una aplicación web para el apoyo en el control de la correspondencia.
+
 \subsection{Alcance}
+
+	\begin{figure}[htbp!]
+		\centering
+			\includegraphics[width=0.8\textwidth]{images/arquitectura}
+		\caption{Arquitectura de la Aplicación.}
+	\end{figure}
+	
