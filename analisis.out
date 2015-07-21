@@ -13,6 +13,11 @@
 \BOOKMARK [0][-]{chapter.2}{An\341lisis}{}% 13
 \BOOKMARK [0][-]{chapter.3}{Dise\361o}{}% 14
 \BOOKMARK [0][-]{chapter.4}{Modelo de Negocios}{}% 15
-\BOOKMARK [0][-]{chapter.5}{Modelo de Casos de Uso}{}% 16
-\BOOKMARK [0][-]{chapter.6}{Modelo de la Interacci\363n}{}% 17
-\BOOKMARK [0][-]{chapter.7}{Modelo del Dominio del problema}{}% 18
+\BOOKMARK [1][-]{section.4.1}{Glosario de Terminos}{chapter.4}% 16
+\BOOKMARK [1][-]{section.4.2}{Pol\355ticas de Operaci\363n Aplicables}{chapter.4}% 17
+\BOOKMARK [1][-]{section.4.3}{Reglas de Negocio}{chapter.4}% 18
+\BOOKMARK [1][-]{section.4.4}{Diagramas de Estado}{chapter.4}% 19
+\BOOKMARK [2][-]{subsection.4.4.1}{Registro y atenci\363n de documentos entrantes}{section.4.4}% 20
+\BOOKMARK [2][-]{subsection.4.4.2}{Registro de documentos salientes}{section.4.4}% 21
+\BOOKMARK [0][-]{chapter.5}{Modelo de Informaci\363n}{}% 22
+\BOOKMARK [1][-]{section.5.1}{Diccionario de Datos}{chapter.5}% 23

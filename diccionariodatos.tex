@@ -1,0 +1,77 @@
+\section{Diccionario de Datos}
+
+\begin{table}[htbp!]
+	\begin{center}
+		\begin{tabular}{|l|l|l|}\hline
+			\textbf{Dato} & \textbf{Resumen} & \textbf{Tipo} \\\hline
+			IdCorrespondencia & Es el identificador consecutivo que tendrá la correspondencia cuando sea registrada. & int \\ \hline
+			FechaEmision & Es la fecha en la cual se emitió el documento. & date \\\hline
+			FechaEntrega & Es la fecha en la cual se está recibiendo el documento a la oficialía de partes. & date \\\hline
+			Asunto & Es un breve resumen del asunto de la correspondencia que se está registrando. & varchar(250) \\\hline
+			Estatus & Es el que define el estatus de la correspondencia (atendido, cancelado o pendiente) & varchar(20) \\\hline
+			NombreRemitente & Nombre del remitente del documento & varchar(150) \\\hline
+			RequiereRespuesta & Es una bandera que nos permite saber si la correspondencia que se está registrando requiere respuesta. & bit \\\hline
+			EnRespuestaA & Identificador del oficio al cual es respuesta el oficio que se está registrando. & varchar(25) \\\hline
+			URLPDF & Es la URL del archivo en la cual estará alojado el documento de correspondencia en el servidor.& varchar(150)\\\hline
+			Prioridad & Es la prioridad que se le dará al documento registrado en la aplicación (alta, media y baja).&
+varchar(6)\\\hline
+			NombrePortador & Es el nombre de la persona que entregó la correspondencia a la oficialía de partes. &  varchar(150)\\\hline
+			IdOficio & Es el identificador que el sistema asignará al nuevo oficio que sea registrado por el personal.
+ & int \\\hline
+ 			IdOficioDependencia & Es el identificador que tiene asignado el oficio externo. & varchar(25)\\\hline
+ 			IdOficoEntrante & Es el folio consecutivo que tiene un oficio que ha llegado al CMPL. & Varchar(15)\\\hline
+ 			EmisorId & Es el identificador del emisor del oficio entrante. & int\\\hline
+ 			FechaLimiteR & Es la fecha límite en la cual se requiere una respuesta a la correspondencia. & date \\\hline
+ 			DependenciaId & Es el identificador que hace referencia a la dependencia del oficio entrante. & int\\\hline
+			CargoEmisor & Es el cargo de la persona que tiene la persona que está redactando el documento recibido. &
+Varchar(35)\\\hline
+			IdDestinatario & Es el identificador del destinatario que se está registrando en la aplicación web. & int\\\hline
+			IdAnexo & Es el identificador del anexo que se está registrando. & int\\\hline
+			DescripcionAnexo & Es un breve resumen de lo que incluye el anexo entregado con la correspondencia. & varchar(150) \\\hline
+			UbicacionAnexo & Es una descripción de la ubicación física del anexo registrado con la correspondencia & varchar(250) \\\hline
+			Correspondenciaid & Es la llave foránea que hace referencia a la llave primaria de la tabla de correspondencia. & int \\\hline
+			URLAcuse & Es la URL en la cual se encuentra el acuse escaneado de los oficios salientes. & varchar(150)\\\hline
+			FechaAcuse & Es la fecha en la cual el acuse fue entregado a la oficialía de partes. & date\\\hline
+			IdDependencia & Es el identificador de la dependencia externa registrada en la aplicación web. & int \\\hline
+			NombreDependencia & Es el nombre de la instancia a la cual se le enviará el oficio. & varchar(50)\\\hline
+			AcronimoDependencia & Es el acrónimo de la dependencia externa que se registre en la aplicación web. &  varchar(20)\\\hline
+			DescripcionDependencia & Es una breve descripción de la dependencia externa que se está registrando en la aplicación. & varchar(150)\\\hline
+			IdEntidadExterna & Es el identificador consecutivo que se le dará a las unidades externas que se registren en la aplicación. & int\\\hline
+			NombreEntidad & Es el nombre de la unidad o el remitente de la unidad externa que se está registrando en la aplicación. & varchar(200)\\\hline
+			CargoEntidad & En caso de que sea una persona la nueva entidad externa se registrará de igual manera el cargo de ésta. & varchar(100) \\\hline
+			EntidadExternaId & Es la llave foránea que hace referencia a la tabla de entidad externa. & int \\\hline
+			DependenciaId & Es la llave foránea que hace referencia a la tabla de dependencia. & int\\\hline
+			IdAnexo & Es el identificador del anexo que viene junto con el documento de correspondencia que se registró. & int\\\hline
+			DescripcionAnexo & Es una breve descripción del contenido del anexo que contiene el archivo de correspondencia. & varchar(250)\\\hline
+			UbicacionFisica & Es una breve descripción de la ubicación física del anexo que se está entregando. & varchar(150)\\\hline
+			NombreAnexo & En caso de que el anexo lleve nombre, se podrá registrar el nombre del anexo. & varchar(100)\\\hline
+			AnexoId & Es la llave foránea a la tabla de anexo para identificar qué anexo pertenece a qué correspondencia. & int\\\hline
+			UsuarioId & Es la llave foránea a la tabla de usuario. & int\\\hline
+			CorrespondenciaId & Es la llave foránea a la tabla de correspondencia. & int\\\hline
+			IdObservacion & Es el identificador consecutivo de las observaciones que se hacen durante el proceso de aprobación de un oficio saliente. & int\\\hline 
+			Observaciones & Son las observaciones que se le da al oficio saliente que está en proceso de aprobación. & Varchar(250)\\\hline
+			IdArea & Es el identificador que tienen las diferentes áreas registradas en la aplicación. & int\\\hline
+			NombreArea & Es el nombre de las diferentes áreas existentes en el CMPL. & varchar(60)\\\hline
+			DescripcionArea & Es una descripción general de las actividades realizadas en el área. & varchar(150)\\\hline
+			IdCargo & Es el identificador que tiene el cargo registrado en el sistema. & int \\\hline
+			NombreCargo & Es el nombre del cargo que tiene la persona que se está registrando en el CMPL. & varchar(100)\\\hline
+			DescripcionCargo & Es una descripción de los cargos en las diferentes áreas del CMPL. & varchar(150)\\\hline
+			IdRol & Es el identificador del rol del usuario en la base de datos. & int\\\hline
+			NomberRol & Es el nombre del rol que tiene como actor en el sistema. & varchar(20)\\\hline
+			DescripcionRol & Es una breve descripción del rol de los usuarios registrados en la aplicación. & varchar(150)\\\hline
+			IdUsuario & Es el identificador que se les asigna a los usuarios registrados en la aplicación web. & int\\\hline
+			Nombre & Es el nombre o nombres del trabajador que es registrado en el sistema debido a que labora CMPL. & varchar(50)\\\hline
+			ApPaterno & Es el apellido paterno del usuario que se registra en la aplicación. & varchar(50)\\\hline
+			ApMaterno & Es el apellido materno del usuario que se registra en la aplicación. & varchar(50)\\\hline
+			Email & Es el correo electrónico con el cual se registra al usuario en la aplicación. & varchar(30)\\\hline
+			Password & Es la contraseña que usará el usuario para iniciar sesión en el sistema. & varchar(255)\\\hline
+			Extension & Es la extensión del departamento en el cual está laborando el usuario de la aplicación en el CMPL. & int\\\hline
+			FechaInicio & Es la fecha en la que inicio el trabajador del CMPL a trabajar. & date\\\hline
+			FechaFin & Es la fecha en la cual terminó de trabajar en el CMPL el usuario del sistema. & date \\\hline
+			URLCV & Es la URL de la ubicación del archivo del currículum vitae en el servidor. & varchar(150)\\\hline
+			Activo & Es la bandera que determina si el usuario registrado sigue trabajando en el CMPL o no lo está. & bit\\\hline
+		\end{tabular}
+		\caption{Tabla muy sencilla.}
+		\label{tabla:sencilla}
+	\end{center}
+\end{table}
