@@ -1,29 +1,70 @@
-\section{Propuesta}
 
-Con base en los problemas expresados, proponemos una aplicación web que esté conformada con los siguientes módulos. \\ 
+Para la problemática presentada anteriormente presentamos en esta sección: el objetivo, objetivos específicos, la justificación, el alcance y la descripción de la propuesta de solución.\\
+
+%La realización de la propuesta está basada en el siguiente objetivo.\\
+%Pues comienzas haciendo referencia a la imagen y dando una breve explicación de lo que contiene
+%"En la imagen x podemos observar de una forma más precisa...
+\section{Objetivo}
+
+Para mitigar las causas y reducir el impacto de los problemas que se tienen nos basamos en el siguiente objetivo: \\
+
+Desarrollar e implementar una aplicación web para el apoyo en el control de la correspondencia.\\
+
+\subsection{Objetivos Específicos}
+
+\begin{itemize}
+	\item Cubrir los lineamientos establecidos para el control de correspondencia en el Manual de Procedimientos del CMPL.
+	\item Tener un respaldo electrónico de los oficios y memorándums para posterior consulta.
+	\item Llevar un registro de los oficios entrantes y salientes.
+	\item Notificar al personal que tiene correspondencia por atender.
+	\item Dar seguimiento a los asuntos que se deben atender.
+\end{itemize}
+
+%\section{Justificación}
+%De acuerdo con los objetivos anteriores 
+%Desarrollar e implementar una aplicación web que fortalezca los procesos de la administración del CMPL.
+
+\section{Alcance}
+
+Para visualizar de una mejor manera el alcance de la aplicación se divide de la siguiente manera: \\
+
+\begin{itemize}
+	\item Funcionalidad: muestra los módulos por los que estará formado la aplicación y los diferentes tipos de usuarios que la utilizarán.
+	\item Plataforma: el hardware, el software y los servicios necesarios para la aplicación.
+	\item Procedimiento: descripción y mejoras al procedimiento anterior.
+	\item Información: la información que se va a manejar dentro de la aplicación.
+	\item Propiedades de software: son los atributos con los que contará la aplicación.
+	\item Interacción con el usuario: la forma en que el usuario podrá hacer el intercambio de información con la aplicación.
+\end{itemize}
+
+%%%%%%%%%% FUNCIONALIDAD %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Funcionalidad}
+
+Con base en los objetivos anteriores la aplicación estará conformada por 5 módulos y 6 tipos de usuarios. En la figura x se observa de manera más precisa como estará formada. \\ 
 
 	\begin{figure}[htbp!]
 		\centering
-			\includegraphics[width=0.8\textwidth]{images/diagramabloques}
+			\includegraphics[width=0.8\textwidth]{images/propuesta/diagramabloques}
 		\caption{Diagrama de Bloques de la Aplicación.}
 	\end{figure}
 
-\subsection{Descripción de Módulos}
-
+\subsubsection{Descripción de Módulos}
 \subsubsection{Control de acceso}
 
-Este módulo sirve para restringir el acceso a usuarios dentro de la aplicación para que puedan acceder a todas sus funciones. Cuenta con una pantalla que tiene un formulario de autenticación donde se le solicita al usuario su correo institucional y su contraseña. Cuando el usuario ingresa sus credenciales la aplicación verifica su correo y su contraseña; si existen entonces la aplicación muestra la pantalla principal de acuerdo al tipo de usuario que sea. En caso contrario, la aplicación regresa a la pantalla de autenticación con un mensaje de error diciendo que los datos introducidos no son válidos.\\
+Este módulo servirá para restringir el acceso a usuarios dentro de la aplicación para que cada uno pueda acceder a todas sus funciones de acuerdo del tipo de usuario que sea.\\ %Cuenta con una pantalla que tiene un formulario de autenticación donde se le solicita al usuario su correo institucional y su contraseña. Cuando el usuario ingresa sus credenciales la aplicación verifica su correo y su contraseña; si existen entonces la aplicación muestra la pantalla principal de acuerdo al tipo de usuario que sea. En caso contrario, la aplicación regresa a la pantalla de autenticación con un mensaje de error diciendo que los datos introducidos no son válidos.\\
 
 \subsubsection{Gestión de usuarios}
-Es el módulo donde se encuentra alojada la información del personal del CMPL que tendrá acceso a SISA, que son el personal administrativo y de apoyo; la información almacenada del personal del CMPL en este módulo es: nombre, apellido paterno, apellido materno, nivel de estudios, departamento al que pertenece, extensión, correo institucional y contraseña. Sirve para mostrar una pantalla con el directorio interno del CMPL, modificar los datos del personal, incluyendo la contraseña.\\
+En este módulo se encontrará alojada la información del personal del CMPL que tendrá acceso a la aplicación, que son el personal administrativo y de apoyo. Se podrán modificar los datos del personal, así como agregar y dar de baja usuarios. \\ %la información almacenada del personal del CMPL en este módulo es: nombre, apellido paterno, apellido materno, nivel de estudios, departamento al que pertenece, extensión, correo institucional y contraseña. Sirve para mostrar una pantalla con el directorio interno del CMPL, modificar los datos del personal, incluyendo la contraseña.\\
 
 \subsubsection{Correspondencia (Oficios y Memorándums)}
+Este módulo tendrá las pantallas de registro de correspondencia de oficios entrantes y salientes, así como los memorándums.\\ %con un formulario que contiene los siguientes campos: número de oficio, fecha de redacción, área que emite, emisor, cargo del emisor, destinatario, cargo del destinatario, dependencia, asunto, fecha de acuse, nombre de quien entrega y si requiere o no respuesta. También cuenta con un selector de archivos que permite la carga del documento escaneado en formato PDF y adjuntarlo al registro. Tiene, además, una pantalla donde se pueden consultar todos los oficios y memorándums enviados y recibidos, por ID, asunto, emisor, cargos de emisor, fecha de recibido, fecha de acuse, dependencia que emite, nombre de quien entrega, pendientes, en espera o un concentrado de todos los oficios y todos los memorándums.\\
 
-Este módulo contiene las pantallas de registro de correspondencia del CMPL, tanto oficios como memorándums, con un formulario que contiene los siguientes campos: número de oficio, fecha de redacción, área que emite, emisor, cargo del emisor, destinatario, cargo del destinatario, dependencia, asunto, fecha de acuse, nombre de quien entrega y si requiere o no respuesta. También cuenta con un selector de archivos que permite la carga del documento escaneado en formato PDF y adjuntarlo al registro. Tiene, además, una pantalla donde se pueden consultar todos los oficios y memorándums enviados y recibidos, por ID, asunto, emisor, cargos de emisor, fecha de recibido, fecha de acuse, dependencia que emite, nombre de quien entrega, pendientes, en espera o un concentrado de todos los oficios y todos los memorándums.\\
-
+En cuanto a los tipos de usuarios que utilizarán la aplicación, cada uno tiene responsabilidades diferentes en el CMPL por lo tanto dentro de la aplicación sus funciones serán diferentes y se describen a continuacion: \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%ROLES DE USUARIOS%%%%%%%%%%%
-\subsection{Descripción de roles de usuarios}
+\subsubsection{Descripción de roles de usuarios}
 
 \subsubsection{Administrador}
 Es el jefe del Departamento de Sistemas y Banco de Datos del CMPL. Tiene el control total de la administración de la información mostrada en la aplicación web.\\
@@ -100,20 +141,33 @@ Es un trabajador del CMPL que esta como encargado en alguna de las subdireccione
 	\item Atender observaciones a los oficios registrados.
 \end{itemize}
 
-
-\subsection{Objetivo}
-
-Nuevo objetivo
-
-\subsection{Justificación}
-
-El objetivo inicial era desarrollar e implementar una aplicación web para el apoyo en el control de la correspondencia.
-
-\subsection{Alcance}
+%%%%%%%%%% PLATAFORMA %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Plataforma}
 
 	\begin{figure}[htbp!]
 		\centering
-			\includegraphics[width=0.8\textwidth]{images/arquitectura}
+			\includegraphics[width=0.8\textwidth]{images/propuesta/arquitectura}
 		\caption{Arquitectura de la Aplicación.}
 	\end{figure}
 	
+%%%%%%%%%% PROCEDIMIENTO %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Procedimiento}
+
+%%%%%%%%%% INFORMACION %%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Información}
+
+%%%%%%%%%% PROPIEDADES DE SW %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Propiedades de software}
+
+%%%% INTERACCION CON EL USUARIO %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Interacción con el usuario}
+Cuenta con una pantalla que tiene un formulario de autenticación donde se le solicita al usuario su correo institucional y su contraseña. Cuando el usuario ingresa sus credenciales la aplicación verifica su correo y su contraseña; si existen entonces la aplicación muestra la pantalla principal de acuerdo al tipo de usuario que sea. En caso contrario, la aplicación regresa a la pantalla de autenticación con un mensaje de error diciendo que los datos introducidos no son válidos.
+
+la información almacenada del personal del CMPL en este módulo es: nombre, apellido paterno, apellido materno, nivel de estudios, departamento al que pertenece, extensión, correo institucional y contraseña. Sirve para mostrar una pantalla con el directorio interno del CMPL, modificar los datos del personal, incluyendo la contraseña.\\
+
+%con un formulario que contiene los siguientes campos: número de oficio, fecha de redacción, área que emite, emisor, cargo del emisor, destinatario, cargo del destinatario, dependencia, asunto, fecha de acuse, nombre de quien entrega y si requiere o no respuesta. También cuenta con un selector de archivos que permite la carga del documento escaneado en formato PDF y adjuntarlo al registro. Tiene, además, una pantalla donde se pueden consultar todos los oficios y memorándums enviados y recibidos, por ID, asunto, emisor, cargos de emisor, fecha de recibido, fecha de acuse, dependencia que emite, nombre de quien entrega, pendientes, en espera o un concentrado de todos los oficios y todos los memorándums.\\
