@@ -51,39 +51,45 @@ La funcionalidad la aplicación se organizará de la siguiente manera: un módul
 A continuación se describe cada módulo.
 
 \subsubsection{Módulo 1: Control de acceso}
-Para el modulo 1 se requiere que cada usuario: considerados para este módulo son los siguientes
+Los requerimientos considerados para este módulo son los siguientes:
 \begin{itemize}
-	\item Tenga una cuenta y una contraseña de acceso.
+	\item Cada usuario tenga una cuenta y una contraseña de acceso.
 	\item Que la aplicación controle el acceso de los usuarios restringiendo el uso de aplicación a la información y funciones que le corresponden.
 	\item Cada usuario debe contar con un mecanismo para recurperar su contraseña.
 	\item Cada usuario podrá editar sus datos.
 \end{itemize} 
 
-Con est se resuelve la problemática ... ya que ... 
-
 Los requerimientos funcionales que implementa este módulo son:
+\begin{itemize}
+	\item[RF] El usuario podrá autenticarse en la aplicación.
+	\item[RF] El usuario podrá cambiar su contraseña.
+	\item[RF] El usuario podrá modificar sus datos.
+\end{itemize}
 
+Con esto se resuelve la problemática de el acceso a información confidencial ya que existen documentos con información de ese tipo que era para una persona y en ocasiones era vista por personal no autorizado.
 
 %Con lo anterior se resuelve que el usuario sólo acceda a la información que le corresponda, con las funciones que correspondan de acuerdo al tipo de usuario que sea.
 
-%Este módulo servirá para restringir el acceso a usuarios dentro de la aplicación para que cada uno pueda acceder a todas sus funciones de acuerdo del tipo de usuario que sea.\\ %Cuenta con una pantalla que tiene un formulario de autenticación donde se le solicita al usuario su correo institucional y su contraseña. Cuando el usuario ingresa sus credenciales la aplicación verifica su correo y su contraseña; si existen entonces la aplicación muestra la pantalla principal de acuerdo al tipo de usuario que sea. En caso contrario, la aplicación regresa a la pantalla de autenticación con un mensaje de error diciendo que los datos introducidos no son válidos.\\
-
 \subsubsection{Módulo 2: Gestión de usuarios}
-Para el modulo 2 se requiere que el usuario pueda:\\
-
+Los requerimientos considerados para este módulo son los siguientes:
 \begin{itemize}
-	\item Registrar nuevos usuarios para que puedan usar la aplicación.
-	\item Editar los datos de los usuarios.
+	\item Registrar nuevos usuarios.
+	%\item Editar los datos de los usuarios.
 	\item Dar de baja a los usuarios.
 	\item Consultar los usuarios registrados.
 \end{itemize}
 
-Esto resuelve que...
+Los requerimientos funcionales que implementa este módulo son:
+\begin{itemize}
+	\item[RF] Registrar nuevos usuarios.
+	\item[RF] Dar de baja a usuarios.
+	\item[RF] Consultar los usuarios registrados
+\end{itemize}
 
-%En este módulo se encontrará alojada la información del personal del CMPL que tendrá acceso a la aplicación, que son el personal administrativo y de apoyo. Se podrán modificar los datos del personal, así como agregar y dar de baja usuarios. \\ %la información almacenada del personal del CMPL en este módulo es: nombre, apellido paterno, apellido materno, nivel de estudios, departamento al que pertenece, extensión, correo institucional y contraseña. Sirve para mostrar una pantalla con el directorio interno del CMPL, modificar los datos del personal, incluyendo la contraseña.\\
+Con esto se resuelve la problemática de ...
 
 \subsubsection{Modulo 3: Correspondencia (Oficios y Memorándums)}
-En este módulo se requiere que el usuario pueda: 
+Los requerimientos considerados para este módulo son los siquientes:
 
 \begin{itemize}
 	\item Consultar los oficios que se le han envíado.
@@ -96,8 +102,17 @@ En este módulo se requiere que el usuario pueda:
 	\item Saber el momento de que se envíe un oficio o memorándum.
 \end{itemize}
 
-De acuerdo con los requerimientos anteriores se resuelve que: los oficios tengan un respaldo, que se sepa el estatus de un oficio, que se lleve de manera correcta el registro de los oficios y que se le notifique al usuario que ha recibido correspondencia.\\
-%Este módulo tendrá las pantallas de registro de correspondencia de oficios entrantes y salientes, así como los memorándums.\\ %con un formulario que contiene los siguientes campos: número de oficio, fecha de redacción, área que emite, emisor, cargo del emisor, destinatario, cargo del destinatario, dependencia, asunto, fecha de acuse, nombre de quien entrega y si requiere o no respuesta. También cuenta con un selector de archivos que permite la carga del documento escaneado en formato PDF y adjuntarlo al registro. Tiene, además, una pantalla donde se pueden consultar todos los oficios y memorándums enviados y recibidos, por ID, asunto, emisor, cargos de emisor, fecha de recibido, fecha de acuse, dependencia que emite, nombre de quien entrega, pendientes, en espera o un concentrado de todos los oficios y todos los memorándums.\\
+Los requerimientos funcionales que implementa este módulo son:
+\begin{itemize}
+	\item[RF] El usuario podrá registrar oficios entrantes.
+	\item[RF] El usuario podrá guardar el documento escaneado.
+	\item[RF] El usuario podrá enviar una copia.
+	\item[RF] El usuario podrá cancelar el proceso de la correspondencia.
+	\item[RF] El usuario podrá registrar anexos.
+\end{itemize}
+
+Con esto se resuelve la problemática de que para los oficios y memorándums: se lleve de manera adecuada su registro, se tenga un respaldo, se le de el seguimiento adecuado a cada uno (la notificación a cada usuario cuando reciba correspondencia, el estatus de cada uno).
+%De acuerdo con los requerimientos anteriores se resuelve que: los oficios tengan un respaldo, que se sepa el estatus de un oficio, que se lleve de manera correcta el registro de los oficios y que se le notifique al usuario que ha recibido correspondencia.\\
 
 En cuanto a los tipos de usuarios que utilizarán la aplicación, cada uno tiene responsabilidades diferentes en el CMPL por lo tanto dentro de la aplicación sus funciones serán diferentes y se describen a continuacion: \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -183,34 +198,50 @@ Es un trabajador del CMPL que esta como encargado en alguna de las subdireccione
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Plataforma}
 
-\subsubsection{Hardware}
-Servidor.
-Computadora (de escritorio o laptop) con conexión a internet.
+Para que la aplicación funcione se necesita de los componentes de hardware, software y los servicios necesarios con el fin de que funcione.\\
+\subsubsection{Hardware, Software y Servicios}
 
-\subsubsection{Software}
-Explorador de internet.
+Dentro del hardware se requiere que el CMPL cuente con un servidor para que de el servicio a otras máquinas y que el personal cuente con una computadora (de escritorio o laptop) con conexión a internet. A su vez cada usuario con su respectiva computadora requiere de un explorador de internet ya sea Chrome, Mozilla, Safari, entre otros.\\
 
-\subsubsection{Servicios}
-Energía eléctrica.
-Aire acondicionado.
-Site.
-Seguridad física. 
+Por último se requiere de los siquientes servicios: 
+\begin{itemize}
+	\item Energía eléctrica o una planta de luz para que cuando se vaya la luz el servidor siga operando.
+	\item Aire acondicionado: para que no se caliente el servidor.
+	\item Site: para colocar el servidor.
+	\item Seguridad física: para que ninguna persona diferente al jefe del departamento de sistemas y banco de datos modifique la configuración del servidor.
+	\item Servicio web: para que los usuarios accedan a la aplicación. 
+\end{itemize} 
+
+En la figura \ref{arquitectura} se puede ver de manera más precisa como interactuan los servicios anteriores con los usuarios.\\
 
 	\begin{figure}[htbp!]
 		\centering
 			\includegraphics[width=0.8\textwidth]{images/propuesta/arquitectura}
 		\caption{Arquitectura de la Aplicación.}
+		\label{arquitectura}
 	\end{figure}
 	
 %%%%%%%%%% PROCEDIMIENTO %%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Procedimiento}
-Las mejoras al procedimiento presentado en el capitulo 1 son:
+Con esta propuesta se mejora el procedimiento presentado en el capitulo 1, las principales mejoras son:
+\begin{itemize}
+	\item Alertas al usuario.
+	\item Notificaciones al correo.
+	\item Respaldos.
+	\item Seguimiento.
+\end{itemize}
 
 
 %%%%%%%%%% INFORMACION %%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Información}
+
+Para la información a manejar dentro de la aplicación de manera general se comtempla manejar la información de:
+\begin{itemize}
+	\item Usuarios: Nombre completo, departamento al que pertenece y rol que desempeña dentro de la aplicación.
+	\item Documentos: número de oficio, fecha de redacción, área que emite, emisor, cargo del emisor, destinatario, cargo del destinatario, dependencia, asunto, fecha de acuse, nombre de quien entrega y si requiere o no respuesta. Además contará con un selector de archivos que permite la carga del documento escaneado en formato PDF y adjuntarlo al registro.
+\end{itemize}
 
 %%%%%%%%%% PROPIEDADES DE SW %%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -219,11 +250,15 @@ Las mejoras al procedimiento presentado en el capitulo 1 son:
 \textbf{Confiabilidad\\}
 La confiabilidad de un sistema es la probabilidad de que el sistema realizará su funcionalidad bajo los limites de diseño especificados, sin fallo, durante un periodo de tiempo determinado. \\
 
+\textbf{Disponibilidad\\}
+La disponibilidad es la probabilidad de que el sistema esta operando en un tiempo particular.\\ 
+
+\textbf{Robustes\\}
+Un sistema de software es robusto si es capaz de responder adecuadamente a las condiciones de tiempo de ejecución no anticipados.\\
+
+
 %%%% INTERACCION CON EL USUARIO %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Interacción con el usuario}
+
 Cuenta con una pantalla que tiene un formulario de autenticación donde se le solicita al usuario su correo institucional y su contraseña. Cuando el usuario ingresa sus credenciales la aplicación verifica su correo y su contraseña; si existen entonces la aplicación muestra la pantalla principal de acuerdo al tipo de usuario que sea. En caso contrario, la aplicación regresa a la pantalla de autenticación con un mensaje de error diciendo que los datos introducidos no son válidos.
-
-la información almacenada del personal del CMPL en este módulo es: nombre, apellido paterno, apellido materno, nivel de estudios, departamento al que pertenece, extensión, correo institucional y contraseña. Sirve para mostrar una pantalla con el directorio interno del CMPL, modificar los datos del personal, incluyendo la contraseña.\\
-
-%con un formulario que contiene los siguientes campos: número de oficio, fecha de redacción, área que emite, emisor, cargo del emisor, destinatario, cargo del destinatario, dependencia, asunto, fecha de acuse, nombre de quien entrega y si requiere o no respuesta. También cuenta con un selector de archivos que permite la carga del documento escaneado en formato PDF y adjuntarlo al registro. Tiene, además, una pantalla donde se pueden consultar todos los oficios y memorándums enviados y recibidos, por ID, asunto, emisor, cargos de emisor, fecha de recibido, fecha de acuse, dependencia que emite, nombre de quien entrega, pendientes, en espera o un concentrado de todos los oficios y todos los memorándums.\\
