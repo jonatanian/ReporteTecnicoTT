@@ -19,7 +19,7 @@ Desarrollar e implementar una aplicación web para el apoyo en el control de la 
 \end{itemize}
 
 \section{Justificación}
-Con esto se cumple la normatividad 
+Con este trabajo creemos mitigar las causas de algunos de los problemas mencionados como: que el registro de los oficios se lleve de manera adecuada, se tenga un respaldo digital del oficio, que se restringa el acceso a la información confidencial, que se pueda saber a quien se le turna un oficio y a quien se le envía copia,  
 %De acuerdo con los objetivos anteriores 
 %Desarrollar e implementar una aplicación web que fortalezca los procesos de la administración del CMPL.
 
@@ -53,14 +53,17 @@ La funcionalidad la aplicación se organizará de la siguiente manera: un módul
 A continuación se describe cada módulo.
 
 \subsubsection{Módulo 1: Gestión de usuarios}
-Este modulo permitirá el registro, la consulta, los cambios y la eliminación de usuarios; además permitirá el control de acceso a la aplicación para que los usuarios puedan hacer uso de la aplicación. \\
+Este modulo permitirá el registro, la consulta, los cambios y la baja de usuarios; además permitirá el control de acceso a la aplicación para que los usuarios puedan hacer uso de la misma. \\
  
 Los requerimientos considerados para este módulo son los siguientes:
 \begin{itemize}
-	\item Cada usuario tenga una cuenta y una contraseña de acceso.
-	\item Que la aplicación controle el acceso de los usuarios restringiendo el uso de aplicación a la información y funciones que le corresponden.
-	\item Cada usuario debe contar con un mecanismo para recurperar su contraseña.
-	\item Cada usuario podrá editar sus datos.
+	\item El usuario necesita tener una nombre de usuario y una contraseña.
+	\item El usuario necesita editar sus datos.
+	\item El usuario necesita un mecanismo para recuperar su contraseña.
+	\item El usuario necesita registrar nuevos usuarios.
+	\item El usuario necesita dar de baja a los usuarios.
+	\item El usuario necesita consultar a los usuarios registrados.
+	\item La aplicación mostrará las funciones que corresponden de acuerdo al tipo de usuario que ingrese.
 \end{itemize} 
 
 Los requerimientos funcionales que implementa este módulo son:
@@ -68,46 +71,38 @@ Los requerimientos funcionales que implementa este módulo son:
 	\item[RF] El usuario podrá autenticarse en la aplicación.
 	\item[RF] El usuario podrá cambiar su contraseña.
 	\item[RF] El usuario podrá modificar sus datos.
+	\item[RF] El usuario podrá registrar nuevos usuarios.
+	\item[RF] El usuario podrá dar de baja a usuarios registrados.
+	\item[RF] El usuario podrá consultar los usuarios registrados.
 \end{itemize}
 
-Con esto se resuelve la problemática de el acceso a información confidencial ya que existen documentos con información de ese tipo que era para una persona y en ocasiones era vista por personal no autorizado.
+Con lo anterior se resuelve que el usuario sólo acceda a la información que le corresponda con las funciones que le correspondan.
 
-%Con lo anterior se resuelve que el usuario sólo acceda a la información que le corresponda, con las funciones que correspondan de acuerdo al tipo de usuario que sea.
+\subsubsection{Modulo 2: Correspondencia Externa}
+Este modulo permitirá el registro, la consulta de la correspondencia que llega al CMPL. \\
 
-%Los requerimientos considerados para este módulo son los siguientes:
-\begin{itemize}
-	\item Registrar nuevos usuarios.
-	%\item Editar los datos de los usuarios.
-	\item Dar de baja a los usuarios.
-	\item Consultar los usuarios registrados.
-\end{itemize}
-
-Los requerimientos funcionales que implementa este módulo son:
-\begin{itemize}
-	\item[RF] Registrar nuevos usuarios.
-	\item[RF] Dar de baja a usuarios.
-	\item[RF] Consultar los usuarios registrados
-\end{itemize}
-
-Con esto se resuelve la problemática de ...
-
-\subsubsection{Modulo 2: Correspondencia}
 Los requerimientos considerados para este módulo son los siquientes:
 
 \begin{itemize}
-	\item Consultar los oficios que se le han envíado.
-	\item Consultar los oficios o memorándums que ha envíado.
-	\item Consultar el estatus de cada oficio.
-	\item Dar el seguimiento a cada oficio.
-	\item Turnar o envíar copia a otro usuario.
-	\item Registrar cuando llega un nuevo oficio.
-	\item Tener un respaldo del oficio.
-	\item Saber el momento de que se envíe un oficio o memorándum.
+	\item El usuario necesita registrar cuando llegue nueva correspondencia.
+	\item El usuario necesita subir el oficio en formato digital.
+	\item El usuario necesita consultar los oficios respondidos.
+	\item El usuario necesita consultar el momento en que un oficio fue entregado.
+	\item El usuario necesita turnar el oficio.
+	\item El usuario necesita enviar una copia del oficio.
+	\item El usuario necesita saber a quien se le turno un oficio.
+	\item El usuario necesita saber si un oficio requiere respuesta.
+	\item El usuario necesita descargar un oficio.
+	\item El usuario necesita dar respuesta a un oficio.
+	\item El usuario necesita asignar carácter al oficio.
+	\item La aplicación mostrará el registro del oficio.
+	\item La aplicación mostrará los oficios pendientes.
+	\item La aplicación mostrará los oficios respondidos.
+	\item La aplicación mostrará el estátus del oficio.
 \end{itemize}
 
-%\subsection{Modulo 3: Correspondencia Interna}
+Los requerimientos funcionales que implementa este modulo son: 
 
-Los requerimientos funcionales que implementa este módulo son:
 \begin{itemize}
 	\item[RF] El usuario podrá registrar oficios entrantes.
 	\item[RF] El usuario podrá guardar el documento escaneado.
@@ -116,14 +111,40 @@ Los requerimientos funcionales que implementa este módulo son:
 	\item[RF] El usuario podrá registrar anexos.
 \end{itemize}
 
-Con esto se resuelve la problemática de que para los oficios y memorándums: se lleve de manera adecuada su registro, se tenga un respaldo, se le de el seguimiento adecuado a cada uno (la notificación a cada usuario cuando reciba correspondencia, el estatus de cada uno).
-%De acuerdo con los requerimientos anteriores se resuelve que: los oficios tengan un respaldo, que se sepa el estatus de un oficio, que se lleve de manera correcta el registro de los oficios y que se le notifique al usuario que ha recibido correspondencia.\\
+Con esto se resuelve la problemática para la los oficios entrantes se lleve de manera adecuada el resgistro, se tenga un respaldo y se le pueda dar el seguimiento. 
 
-En cuanto a los tipos de usuarios que utilizarán la aplicación, cada uno tiene responsabilidades diferentes en el CMPL por lo tanto dentro de la aplicación sus funciones serán diferentes y se describen a continuacion: \\
+\subsubsection{Modulo 3: Correspondencia Interna}
+Este modulo permitirá el registro, la consulta y el seguimiento de los memorándums dentro del CMPL.\\
+
+Los requerimientos considerados para este módulo son los siguientes: 
+\begin{itemize}
+	\item El usuario necesita registrar memorándums.
+	\item El usuario necesita subir el memorándum.
+	\item El usuario necesita turnar el memorándum.
+	\item El usuario necesita envíar copia del memorándum.
+	\item El usuario necesita asignar prioridad al memorándum.
+	\item El usuario necesita consultar los memorándums. 
+\end{itemize}
+
+Los requerimientos funcionales que implementa este modulo son: 
+
+\begin{itemize}
+	\item[RF] El usuario podrá registrar memorándums.
+	\item[RF] El usuario podrá guardar el documento escaneado.
+	\item[RF] El usuario podrá enviar una copia.
+	\item[RF] El usuario podrá cancelar el proceso de la correspondencia.
+	\item[RF] El usuario podrá registrar anexos.
+\end{itemize}
+
+%De acuerdo con los requerimientos anteriores se resuelve que: los oficios tengan un respaldo, que se sepa el estatus de un oficio, que se lleve de manera correcta el registro de los oficios y que se le notifique al usuario que ha recibido correspondencia.\\
+%En cuanto a los tipos de usuarios que utilizarán la aplicación, cada uno tiene responsabilidades diferentes en el CMPL por lo tanto dentro de la aplicación sus funciones serán diferentes y se describen a continuacion: \\
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%ROLES DE USUARIOS%%%%%%%%%%%
+
 \subsection{Descripción de roles de usuarios}
-En esta sección describimos cada uno de los posibles perfiles de usuarioslll
+En esta sección describimos cada uno de los posibles perfiles de usuarios que tenemos para la aplicación, en ellos se estará dividiendo el control de acceso a la misma como se lista a continuación.\\
+
 \subsubsection{Administrador}
 Es el jefe del Departamento de Sistemas y Banco de Datos del CMPL. Tiene el control total de la administración de la información mostrada en la aplicación web.\\
 
@@ -203,10 +224,45 @@ Es un trabajador del CMPL que esta como encargado en alguna de las subdireccione
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Plataforma}
 
-Para que la aplicación funcione se necesita de los componentes de hardware, software y los servicios necesarios con el fin de que funcione.\\
-\subsubsection{Hardware, Software y Servicios}
+Para que la aplicación funcione se necesita de los componentes de hardware, software y los servicios. En la figura \ref{arquitectura} se puede ver de una manera mas precisa como interactuan estos componentes. \\
 
-Dentro del hardware se requiere que el CMPL cuente con un servidor para que de el servicio a otras máquinas y que el personal cuente con una computadora (de escritorio o laptop) con conexión a internet. A su vez cada usuario con su respectiva computadora requiere de un explorador de internet ya sea Chrome, Mozilla, Safari, entre otros.\\
+\begin{figure}[htbp!]
+		\centering
+			\includegraphics[width=0.8\textwidth]{images/propuesta/arquitectura}
+		\caption{Arquitectura de la Aplicación.}
+		\label{arquitectura}
+	\end{figure}
+	
+\subsubsection{Hardware}
+
+Dentro del hardware se requiere que el CMPL cuente con:
+\begin{enumerate}
+	\item Un servidor para que de el servicio a las computadoras, aloje la aplicación así como los registros de la correspondencia y se hagan los respaldos. Este servidor deberá contar con: 
+	\begin{itemize}
+		\item Al menos con 500 GB de disco duro.
+		\item Un monitor.
+		\item Un teclado.
+		\item Un mouse.
+		\item Al menos 8 GB en memoria RAM.
+		\item Un procesador Intel Xeon.
+	\end{itemize}
+	\item Cada trabajador deberá contar con una computadora ya sea de escritorio o laptop con: 
+	\begin{itemize}
+		\item Al menos 256 GB de disco duro.
+		\item 2 GB en memoria RAM.
+		\item Un procesador Intel Quad Core. 
+	\end{itemize}
+\end{enumerate}
+
+\subsubsection{Software}
+El software que requiere es: 
+\begin{enumerate}
+	\item Un sistema operativo tanto para el servidor como las computadoras.
+	\item Un navegador de internet.
+	\item Un gestor de base de datos.
+	\item Un servidor de correos.
+\end{enumerate}
+\subsubsection{Servicios}
 
 Por último se requiere de los siquientes servicios: 
 \begin{itemize}
@@ -215,26 +271,26 @@ Por último se requiere de los siquientes servicios:
 	\item Site: para colocar el servidor.
 	\item Seguridad física: para que ninguna persona diferente al jefe del departamento de sistemas y banco de datos modifique la configuración del servidor.
 	\item Servicio web: para que los usuarios accedan a la aplicación. 
+	\item Conexión a internet.
 \end{itemize} 
 
-En la figura \ref{arquitectura} se puede ver de manera más precisa como interactuan los servicios anteriores con los usuarios.\\
-
-	\begin{figure}[htbp!]
-		\centering
-			\includegraphics[width=0.8\textwidth]{images/propuesta/arquitectura}
-		\caption{Arquitectura de la Aplicación.}
-		\label{arquitectura}
-	\end{figure}
-	
 %%%%%%%%%% PROCEDIMIENTO %%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Procedimiento}
 Con esta propuesta se mejora el procedimiento presentado en el capitulo 1, las principales mejoras son:
+
+\begin{figure}[htbp!]
+		\centering
+			\includegraphics[width=0.8\textwidth]{images/propuesta/registrooficio}
+		\caption{Procedimiento de recepción.}
+		\label{Registro oficio}
+	\end{figure}
+	
 \begin{itemize}
 	\item Alertas al usuario: cuando el usuario este utilizando la aplicación está mostrará los asuntos que no ha atendido. 
 	\item Notificaciones al correo: una vez que se turne un oficio, se enviará un correo electrónico al usuario diciendo que tiene un nuevo asunto por atender. 
-	\item Respaldos: 
-	\item Seguimiento: 
+	\item Respaldos: el administrador podrá realizar los respaldos de todos los registros de la corespondencia así como los documentos digitales.
+	\item Seguimiento: el seguimiento de la correspondencia comprende varios estados...
 \end{itemize}
 
 
@@ -244,8 +300,10 @@ Con esta propuesta se mejora el procedimiento presentado en el capitulo 1, las p
 
 Para la información a manejar dentro de la aplicación de manera general se comtempla manejar la información de:
 \begin{itemize}
-	\item Usuarios: Nombre completo, departamento al que pertenece y rol que desempeña dentro de la aplicación.
-	\item Documentos: número de oficio, fecha de redacción, área que emite, emisor, cargo del emisor, destinatario, cargo del destinatario, dependencia, asunto, fecha de acuse, nombre de quien entrega y si requiere o no respuesta. Además contará con un selector de archivos que permite la carga del documento escaneado en formato PDF y adjuntarlo al registro.
+	\item Usuarios: Nombre completo, departamento al que pertenece, rol que desempeña dentro de la aplicación, contraseña y correo electrónico.
+	\item Oficio entrante: número de oficio, fecha de redacción, área que emite, emisor, cargo del emisor, destinatario, cargo del destinatario, dependencia, asunto, fecha de acuse, nombre de quien entrega, si requiere o no respuesta, a quien se le turnó, a quien se le envió copia y si tiene documentos adjuntos. Además contará con un selector de archivos que permite la carga del documento escaneado en formato PDF y adjuntarlo al registro.
+	\item Oficio saliente: número de oficio, fecha de redacción, área que emite, emisor, cargo del emisor, destinatario, cargo del destinatario, dependencia, asunto, fecha de acuse, nombre de quien entrega, si es respuesta a un oficio anterior y si tiene documentos adjuntos.
+	\item Memorándum: fecha de redacción, destinatario, cargo del destinatario, departamento, asunto, área que emite, emisor, cargo del emisor, si require respuesta. 
 \end{itemize}
 
 %%%%%%%%%% PROPIEDADES DE SW %%%%%%%%
@@ -266,7 +324,13 @@ Un sistema de software es robusto si es capaz de responder adecuadamente a las c
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Interacción con el usuario}
 
-Cuenta con una pantalla que tiene un formulario de autenticación donde se le solicita al usuario su correo institucional y su contraseña. Cuando el usuario ingresa sus credenciales la aplicación verifica su correo y su contraseña; si existen entonces la aplicación muestra la pantalla principal de acuerdo al tipo de usuario que sea. En caso contrario, la aplicación regresa a la pantalla de autenticación con un mensaje de error diciendo que los datos introducidos no son válidos.
+%Cuenta con una pantalla que tiene un formulario de autenticación donde se le solicita al usuario su correo institucional y su contraseña. Cuando el usuario ingresa sus credenciales la aplicación verifica su correo y su contraseña; si existen entonces la aplicación muestra la pantalla principal de acuerdo al tipo de usuario que sea. En caso contrario, la aplicación regresa a la pantalla de autenticación con un mensaje de error diciendo que los datos introducidos no son válidos.
 
 \section{Metodología}
-
+Espiral 
+se harán 4 iteraciones 
+llevamos dos faltan dos 
+en la primera hicimos 
+en la segunda hicimos 
+parrafo de cierre 
+%\item Que la aplicación controle el acceso de los usuarios restringiendo el uso de aplicación a la información y funciones que le corresponden.
