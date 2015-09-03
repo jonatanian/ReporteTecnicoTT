@@ -81,14 +81,42 @@ transferencia, préstamo, selección y control de la documentación manejada por
 	
 		\textbf{Políticas de operación}\\
 		
+	Se describen a continuación, de manera generalizada, las políticas que se deben cumpli al momento de manejo de archivos y correspondencia dentro del CMPL.
+		
 		\begin{enumerate}
-			\item La correspondencia que ingrese, dirigida al Director del Centro Mexicano para la Producción más Limpia (CMP+L), deberá ser registrada y controlada, a través del control de correspondencia de la intranet.
-			\item La correspondencia gestionada en la unidad responsable, recibirá el tratamiento que se indica en la Ley Federal de Transparencia y Acceso a la Información Pública Gubernamental.
-			\item Los documentos que ingresen al Centro Mexicano para la Producción más Limpia, deberán estar firmados por el remitente y con el sello correspondiente de la entidad que envía; si contiene anexo archivo magnético, se comprobará que contenga la información descrita en el documento; si menciona anexos, se verificará que estén completos.
-			\item El documento original deberá escanearse y subirse al apartado de oficios recibidos dentro de la aplicación de control de correspondencia de la intranet.
+			\item La correspondencia que ingrese, dirigida al Director del Centro Mexicano para la Producción más Limpia (CMP+L), deberá ser registrada y controlada, a través del control de correspondencia de la intranet\cite{ControlCMPL}.
+			\item La correspondencia gestionada en la unidad responsable, recibirá el tratamiento que se indica en la Ley Federal de Transparencia y Acceso a la Información Pública Gubernamental\cite{ControlCMPL}.
+			\item Los documentos que ingresen al Centro Mexicano para la Producción más Limpia, deberán estar firmados por el remitente y con el sello correspondiente de la entidad que envía; si contiene anexo archivo magnético, se comprobará que contenga la información descrita en el documento; si menciona anexos, se verificará que estén completos\cite{ControlCMPL}.
+			\item El documento original deberá escanearse y subirse al apartado de oficios recibidos dentro de la aplicación de control de correspondencia de la intranet\cite{ControlCMPL}.
 		\end{enumerate}
 		
-	%Brenda Lee me mandará el diagrama de flujo de esta sección.
+	La figura \ref{fig:FlujoCMPL} muestra el diagrama de flujo que describe el proceso de correspondencia y manejo de archivo que sigue el CMPL según las políticas anteriores.		
+		
+	\begin{figure}[htbp!]
+		\centering
+			\includegraphics[width=0.8\textwidth]{images/diagramacmpl.png}
+		\caption{Proceso de control de correspondencia y manejo de archivos.}
+		\label{fig:FlujoCMPL}
+	\end{figure}
+	
+	El diagrama actúa de la siguiente forma:
+	
+	\begin{enumerate}
+		\item Recibe documentos y revisa que cumpla con los requisitos establecidos en las políticas de operación. ¿Cumple con los requisitos?
+		\item No, regresa documentos y/o información. Pasa a la actividad 1.
+		\item Si, sella de recibido de la Dirección indica sus iniciales de quién recibió el documento y hora de recepción.
+		\item Registra documentos en el apartado de control de correspondencia del intranet y registra si contienen anexos y o archivos magnéticos, posteriormente los pasa a revisión de la dirección.
+		\item Asigna y turna al órgano del CMP+L que dará atención al documento.
+		\item Recibe y atiende indicaciones. ¿Requiere respuesta?
+		\item No, archiva y pasa al fin del procedimiento.
+		\item Sí, elabora documento de respuesta.
+		\item Recibe y analiza documento de respuesta. ¿Cumple con las indicaciones?
+		\item  No, realiza observaciones. Pasa a la actividad 6.
+		\item Si, Autoriza, firma y lo turna al órgano que atendió.
+		\item  Envía documento de respuesta con su respectivo acuse a oficialía de partes para su entrega ante la instancia correspondiente.
+		\item Entrega oficio o memorándum firmado y/o documento de respuesta a la instancia correspondiente y se asegura de que el acuse sea debidamente sellado.
+		\item Recibe acuse de recibido y archiva.
+	\end{enumerate}
 	
 	\subsection{MAAGTIG-SI}%Explicar qué es esa norma, a quién le aplica y por qué es importante para nosotros y qué partes se van a aplicar.
 	El MAAGTIC (Manual Administrativo de Aplicación General en Materia de Tecnologías de la Información y Comunicaciones) es un MANUAL que describe 30 procesos de Tecnologías de Información y Comunicaciones, distribuidos en 11 grupos por área de conocimiento o dominio de aplicación. Para cada área de conocimiento se utilizan los principales estándares y mejores prácticas relacionadas\cite{MAAGTICSI}. Fue publicado en el Diario Oficial de la Federación (DOF) el 13 de julio de 2010 y entró en vigor el 20 de agosto del 2010. Su aplicación es obligatoria para toda la Administración Pública Federal (APF). Por dicha razón, este conjunto de procesos (llamado también conjunto de proyectos) es aplicable a los sitemas IPN y por tanto al CMPL, por lo que es fundamental para nosotros conocer en qué área de este conjunto de proyectos cae el sistema del trabajo terminal y así determinar las normas y estándares aplicables que debemos tomar en consideración.\\
@@ -169,7 +197,7 @@ transferencia, préstamo, selección y control de la documentación manejada por
 	
 	\begin{figure}[htbp!]
 		\centering
-			\includegraphics[width=1\textwidth]{images/antecedentes/OrganigramaCMPL.png}
+			\includegraphics[width=1\textwidth]{images/Organigrama.png}
 		\caption{Diagrama de Estados de documentos entrantes. \cite{Organigrama}}
 		\label{fig:organigrama}
 	\end{figure}
@@ -191,7 +219,29 @@ transferencia, préstamo, selección y control de la documentación manejada por
 	En el manual de procedimientos se describen todos los procesos de todas las áreas del CMPL. Para fines del presente proyecto, a continuación describiremos el proceso de control de correspondencia.
 	
 	\subsection{Proceso de control de correspondencia}
-	%Presentar los cuatro procesos
+	El proceso de control de correspondencia se divide en cuatro tipos: oficios entrantes, oficios de respuesta, oficios salientes y memorándums. Los procesos de cada uno de estos subprocesos de control de correspondencia se describen así:
+	
+	\subsubsection{Oficios entrantes}
+	
+	\begin{figure}[htbp!]
+		\centering
+			\includegraphics[width=1\textwidth]{images/procesoregistro.png}
+		\caption{Diagrama de registro de oficios entrantes.}
+		\label{fig:OficiosEntrantes}
+	\end{figure}
+	
+	\subsubsection{Oficios de respuesta}
+	
+	\begin{figure}[htbp!]
+		\centering
+			\includegraphics[width=1\textwidth]{images/procesorespuesta.png}
+		\caption{Diagrama de registro de oficios de respuesta.}
+		\label{fig:OficiosRespuesta}
+	\end{figure}
+	
+	\subsubsection{Oficios salientes}
+	
+	\subsubsection{Memorándums}
 	%Hablar de los involucrados en el proceso
 	%Describir cada uno de los prcocesos
 	%Indicar los requerimientos de las normas
@@ -201,7 +251,7 @@ transferencia, préstamo, selección y control de la documentación manejada por
 	
 	
 	
-	El personal involucrado para el proceso de control de correspondencia es llevado a cabo por la  Dirección, Oficialía de Partes, Subdirecciones y Jefaturas. está conformado por cuatro procesos 
+	El personal involucrado para el proceso de control de correspondencia es llevado a cabo por la  Dirección, Oficialía de Partes, Subdirecciones y Jefaturas. Está conformado por cuatro procesos.
 	
 	Toda la información brindada por cada área demanda una cantidad considerable de materia de papelería, pues llevar todo ese proceso de forma manual hace que no se tenga un compromiso responsable con el medio ambiente.  Es en este proceso donde entra en juego la norma ISO 14000. Dicha norma exige al CMPL contar con un sistema computacional que automatice en gran parte los procesos del CMPL, buscando reducir la cantidad de papel utilizada, especialmente en documentos que son únicamente de carácter informativo.\\
 	
