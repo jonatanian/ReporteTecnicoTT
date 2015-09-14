@@ -338,7 +338,7 @@ transferencia, préstamo, selección y control de la documentación manejada por
 		\item Oficialía de Partes turna el memorándum a la subdirección o jefatura correspondiente.
 		\item El destinatario (Jefe o Subdirector) recibe el memorándum.
 		\item El destinatario verifica que sea para él.
-		\item Si es para él entonces firma de recibido y de enterado.
+		\item Si es para él entonces firma de recibido y de enterado. Atiende memorándum.
 		\item Si no es para él entonces turna de vuelta a Oficialía de Partes. Regresa al paso 5.
 		\item Termina proceso.
 	\end{enumerate}
@@ -349,7 +349,19 @@ transferencia, préstamo, selección y control de la documentación manejada por
 	La figura \ref{fig:MemoReGeneral} muestra el proceso para dar respuesta a memorándums generales. Dicho proceso se describe a continuación.
 	
 	\begin{enumerate}
-		\item 
+		\item El encargado (Subdirector o Jefe) elabora el memorándum de respuesta a memorándum general.
+		\item Si tiene identificador el memorándum a responder entonces se anota en el asunto del memorándum de respuesta.
+		\item Si no tiene identificador entonces se describe en respuesta a qué memorándum se está contestando.
+		\item El encargado elabora el memorándum y lo turna a Oficialía de Partes.
+		\item Oficialía de Partes lo turna al Director.
+		\item El Director lo revisa y evalúa.
+		\item Si el memorándum es aprobado por el director entonces el Director turna de vuelta el memorándum a Oficialía de Partes.
+		\item Oficialía de Partes turna el memorándum a la subdirección o jefatura correspondiente que espera la respuesta.
+		\item El destinatario (Jefe o Subdirector) recibe el memorándum.
+		\item El destinatario verifica que sea para él.
+		\item Si es para él entonces firma de recibido y de enterado. Atiende memorándum.
+		\item Si no es para él entonces turna de vuelta a Oficialía de Partes. Regresa al paso 5.
+		\item Termina proceso.
 	\end{enumerate}
 	
 	\subsubsection{Memoránum personal}
@@ -360,18 +372,31 @@ transferencia, préstamo, selección y control de la documentación manejada por
 		\item Oficialía de Partes lo turna a los debidos destinatarios.
 		\item El destinatario (empleado, Subdirector o Jefe) recibe el memorándum.
 		\item El destinatario verifica que sea memorándum para él.
-		\item Si es para él, el destinarario firman de recibido y de enterado.
+		\item Si es para él, el destinarario firman de recibido y de enterado. Atiende memorándum.
 		\item El destinatario atiende el asunto del memorándum.
 		\item Si no es para él, el destinatario turna de vuelta a Oficialía de Partes. Regresa la paso 2.
 		\item Termina proceso.
 	\end{enumerate}
 	
 	\subsubsection{Respuesta a memorándum personal}
+	La figura \ref{fig:MemoRePersonal} muestra el proceso para dar respuesta a memorándums personales. Dicho proceso se describe a continuación.
 	
+	\begin{enumerate}
+		\item El empleado del CMPL (empleado, Subdirector o Jefe) elabora el memorándum de respuesta al memorándum personal.
+		\item Si tiene identificador el memorándum a responder entonces se anota en el asunto del memorándum de respuesta.
+		\item Si no tiene identificador entonces se describe en respuesta a qué memorándum se está contestando.
+		\item El empleado elabora el memorándum y lo turna a Oficialía de Partes.
+		\item Oficialía de Partes lo turna al destinatario correspondiente.
+		\item El destinatario (empleado, Jefe o Subdirector) recibe el memorándum.
+		\item El destinatario verifica que sea para él.
+		\item Si es para él entonces firma de recibido y de enterado. Atiende memorándum.
+		\item Si no es para él entonces turna de vuelta a Oficialía de Partes. Regresa al paso 5.
+		\item Termina proceso.
+	\end{enumerate}
 	
-	Toda la información brindada por cada área demanda una cantidad considerable de materia de papelería, pues llevar todo ese proceso de forma manual hace que no se tenga un compromiso responsable con el medio ambiente, a la par de que los procesos se vuelven más lentos, afectando la calidad de tranajo del CMPL, incumpliendo con los objetivos de la norma ISO 9001:2008.  En este proceso también entra en juego la norma ISO 14000. Dicha norma exige al CMPL contar con un sistema computacional que automatice en gran parte los procesos del CMPL, buscando reducir la cantidad de papel utilizada, especialmente en documentos que son únicamente de carácter informativo, como lo son generalmente los memorándums.\\
+	Toda la información brindada por cada área demanda una cantidad considerable de materia de papelería; el control de oficios y memorándums no queda excento de esta situcación, pues llevar todo ese proceso de forma manual hace que no se tenga un compromiso responsable con el medio ambiente, a la par de que los procesos se vuelven más lentos, afectando la calidad de tranajo del CMPL, incumpliendo con los objetivos de la norma ISO 9001:2008.  En este proceso también entra en juego la norma ISO 14000. Dicha norma exige al CMPL contar con un sistema computacional que automatice en gran parte los procesos del CMPL, buscando reducir la cantidad de papel utilizada, especialmente en documentos que son únicamente de carácter informativo, como lo son generalmente los memorándums. Se describe a continuación el sistema que el CMPL ha implementado como una medida para mitigar el impacto en la calidad del trabajo del CMPL y su compromiso con el medio ambiente.\\
 	
-	\section{Sistemas de información del CMPL}
+	\section{Sistema de información del CMPL}
 	El Departamento de Sistemas y Banco de Datos desarrolló un sistema que da soporte en la operación del SIG. Con este sistema se cumplía la reducción del papel y el uso de tecnologías de la información para tener un impacto ambiental más limpio en los procesos del CMPL  y así cubrir parte de los requisitos para obtener la certificación de la ISO 14000. El sistema llevaba como nombre ``Intranet CMPL'', al ser una aplicación web que estaba alojada de forma local en la red del CMPL. Sus funciones eran:\\
 	
 	\begin{itemize}
@@ -402,6 +427,8 @@ transferencia, préstamo, selección y control de la documentación manejada por
 		\item ASP.NET.
 		\item Microsoft Office Access 2000.
 	\end{itemize}
+	
+	El por qué este sistema no representa un papel fundamental en el trabajo diario del CMPL se describe a continuación.
 		
 	\section{Situación actual}
 	Este sistema operó hasta abril de 2014, año en el que durante el cambio de administración se perdió la información del sistema y código fuente, a  tal grado que el sistema no pudo volver a operar. A partir de ahí el nuevo personal del CMPL realiza todas sus actividades de forma manual, incumplimiento con la norma ISO 14001. Esto causó que no se recibiera dicha certificación en 2014 y fue la razón por la cual se pensó en volver a desarrollar un nuevo sistema que de soporte al SIG y así poder recuperar la certificación ISO 14000, que es de vital importancia para el CMPL.\\
