@@ -271,7 +271,8 @@ Por último se requiere de los siquientes servicios:
 	\item Una planta de luz para que cuando se vaya la luz el servidor siga operando.
 	\item Un sistema de enfriamiento para refrigeración del servidor y evitar averias.
 	\item Site para colocar el servidor.
-	\item Seguridad física para que ninguna persona diferente al jefe del departamento de sistemas y banco de datos modifique la configuración del servidor.
+	\item Una puerta con llave para que ninguna persona diferente al jefe del departamento de sistemas y banco de datos entre y modifique la configuración del servidor.
+	\item Que el administrador genere respaldos.
 	\item Cámaras de seguridad. 
 	\item Servicio web para que los usuarios accedan a la aplicación. 
 	\item Configuración de red.
@@ -296,6 +297,7 @@ Con esta propuesta se mejora el procedimiento presentado en el capitulo 1, las p
 	\item Seguimiento: el seguimiento de la correspondencia comprende varios estados...
 \end{itemize}
 
+Con esto se tiene la información general que se podrá manejar dentro de la aplicación, la cual se describe en la siguiente sección.
 
 %%%%%%%%%% INFORMACION %%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -309,13 +311,19 @@ Para la información a manejar dentro de la aplicación de manera general se com
 	\item Memorándum: fecha de redacción, destinatario, cargo del destinatario, departamento, asunto, área que emite, emisor, cargo del emisor, si require respuesta. 
 \end{itemize}
 
+Para los documentos (oficios entrantes, salientes y memorándums) se manejarán a parte, sólo se escanean y se guardan dentro de la aplicación. 
+
 %%%%%%%%%% PROPIEDADES DE SW %%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Propiedades de software}
 
 Las propiedades de software o propiedad no funcional de un sistema, es una limitación en la manera en que el sistema implementa y emite su funcionalidad; es decir, son restricciones en las funciones que ofrece un sistema. Incluyen restricciones sobre el tiempo, confiabilidad, disponibilidad, seguridad, eficiencia, escalabilidad, tolerancia a fallos y robustes. \\
 
-Para fines de este proyecto sólo se considerará la confiabilidad, la disponibilidad y la robustes.
+Para fines de este proyecto sólo se considerará la confiabilidad, la disponibilidad, la robustes y la seguridad debido a que realizar un sistema con todas las propiedades no funcionales resulta muy complejo y requeriria mucho tiempo para lograse, además de que el CMPL no requiere que lleve todas las propiedades porque el sistema es sólo para operarse dentro del centro. A continuación se define cada una de ellas. \\ %poner un porque acertivo 
+
+\textbf{Seguridad\\}
+Indica la capacidad de un sistema de software para evitar fallos que se traducirá en la pérdida de vidas, lesiones, daños significativos a la propiedad o destrucción de la propiedad.
+
 \textbf{Confiabilidad\\}
 La confiabilidad de un sistema es la probabilidad de que el sistema realizará su funcionalidad bajo los limites de diseño especificados, sin fallo, durante un periodo de tiempo determinado. \\
 
@@ -325,12 +333,13 @@ La disponibilidad es la probabilidad de que el sistema esta operando en un tiemp
 \textbf{Robustes\\}
 Un sistema de software es robusto si es capaz de responder adecuadamente a las condiciones de tiempo de ejecución no anticipados.\\
 
+Con respecto a los atributos mencionados, se considera que el servidor se deberá encontrar en buenas condiciones... 
 
 %%%% INTERACCION CON EL USUARIO %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Interacción con el usuario}
 
-La interacción de la aplicación con el usuario será mediante pantallas con formularios, mensajes de confirmación, alertas. 
+La interacción de la aplicación con el usuario será mediante pantallas con formularios, mensajes de confirmación, alertas. Para esto se utlizarán herramientas como JQuery o Ajax porque nos permite simplificar la manera de interactuar con los documentos HTML, manipular las hojas de estilo para dar efectos.
 %Cuenta con una pantalla que tiene un formulario de autenticación donde se le solicita al usuario su correo institucional y su contraseña. Cuando el usuario ingresa sus credenciales la aplicación verifica su correo y su contraseña; si existen entonces la aplicación muestra la pantalla principal de acuerdo al tipo de usuario que sea. En caso contrario, la aplicación regresa a la pantalla de autenticación con un mensaje de error diciendo que los datos introducidos no son válidos.
 
 \section{Metodología}
@@ -340,5 +349,6 @@ La metodología que se utiliza para el desarrollo de este trabajo es Espiral, la
 Para este proyecto se realizarán 4 iteraciones, en esta primera fase de evaluación se realizaron las primeras dos iteraciones. La primera iteración consistió en investigar y probar  diferentes tecnologías para desarrollar el proyecto tanto hardware como software y una vez hecho se configuraron las máquinas a utilizar y el servidor del CMPL. \\
 La segunda iteración se realizó el análisis, diseño y desarrollo de la problemática, se realizaron las primeras pantallas.\\
 
-parrafo de cierre 
+Por último en la tercera y cuarta iteración se realizará el desarrollo de pantallas funcionales, así como la implementación de la aplicación en el servidor del CMPL, además del manual técnico y la capacitación del personal. \\ 
+
 %\item Que la aplicación controle el acceso de los usuarios restringiendo el uso de aplicación a la información y funciones que le corresponden.
