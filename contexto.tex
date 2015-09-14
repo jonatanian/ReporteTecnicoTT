@@ -116,6 +116,7 @@ transferencia, préstamo, selección y control de la documentación manejada por
 		\item  Envía documento de respuesta con su respectivo acuse a oficialía de partes para su entrega ante la instancia correspondiente.
 		\item Entrega oficio o memorándum firmado y/o documento de respuesta a la instancia correspondiente y se asegura de que el acuse sea debidamente sellado.
 		\item Recibe acuse de recibido y archiva.
+		\item Termina proceso.
 	\end{enumerate}
 	
 	Aunque este es el actual procedimiento del CMPL para el control de la correspondencia, es importante saber también cuál es el conjunto de normas que rigen los sistemas de información del CMPL y del IPN , ya que se busca sistematizar computacionalmente este procedimiento, para lo cual debemos abordar un poco de lo que es MAAGTIC-SI, el conjunto de normas y estándares aplicables a las entidades públicas del país por parte del Gobierno Federal, para el desarrollo de todo sistema de cómputo.
@@ -201,8 +202,8 @@ transferencia, préstamo, selección y control de la documentación manejada por
 	
 	\begin{figure}[htbp!]
 		\centering
-			\includegraphics[width=1\textwidth]{images/Organigrama.png}
-		\caption{Diagrama de Estados de documentos entrantes. \cite{Organigrama}}
+			\includegraphics[width=1.2\textwidth]{images/Organigrama.png}
+		\caption{Organigrama interno del CMPL. \cite{Organigrama}}
 		\label{fig:organigrama}
 	\end{figure}
 	
@@ -228,25 +229,57 @@ transferencia, préstamo, selección y control de la documentación manejada por
 	El personal involucrado para el proceso de control de correspondencia es llevado a cabo por la  Dirección, Oficialía de Partes, Subdirecciones y Jefaturas. Los siguientes diagramas de procesos describen cada uno de ellos.
 	
 	\subsubsection{Oficios entrantes}
-	La figura \ref{fig:OficiosEntrantes} muestra cómo es el proceso de recepción de oficios externos al CMPL y cómo es que éstos son atendidos.
+	La figura \ref{fig:OficiosEntrantes} muestra cómo es el proceso de recepción de oficios externos al CMPL y cómo es que éstos son atendidos. El proceso es así:
+	
+	\begin{enumerate}
+		\item Oficialía de Partes recibe oficio entrante.
+		\item Oficialía de partes verifica que el oficio recibido cumpla con todos los elementos establecidos en el manual de procedimientos del CMPL.
+		\item Si cumple con todos los lineamientos firma de recibido y otorga acuse de recibido.
+		\item Sino entonces regresa al portador oficio entrante con las observaciones encontradas que impidieron la recepción del documento y sus anexos. Termina proceso.
+		\item Oficialía de Partes registra en la bitácora de control de oficios el oficio que acaba de recibir con su número de oficio externo, fecha, datos de la instancia y encargado que lo emitió y su asunto.
+		\item Oficialía de Partes turna el original al Director.
+		\item El Director revisa el oficio entrante y checa si es destinado a él.
+		\item Si es para él entonces lo atiende.
+		\item Sino entonces verifica si el oficio es público, privado o confidencial.
+		\item Si el oficio es confidencial entonces el Director turna directamente al destinatario, que puede ser un jefe, un subdirector o un empleado.
+		\item El destinatario recibe el oficio y verifica que sea para él.
+		\item Si es para él entonces atiende el oficio. Termina proceso.
+		\item Si no es para él entonces turna al Director con una nota diciendo que el oficio fue turnado por equivocación a la persona incorrecta. Regresa al paso 7.
+		\item Si el oficio no es confidencial entonces el Director turna al Subdirector o Jefe correspondiente.
+		\item El Subdirector o Jefe revisa el oficio y verifica si es público o privado.
+		\item Si el oficio es público entonces lo atiende. Termina proceso.
+		\item Sino entonces verifica si el oficio es privado y lo turna al empleado correspondiente.
+		\item El empleado recibe el oficio y lo revisa.
+		\item Si el oficio es para él entonces lo atiende. Termina proceso.
+		\item Si el oficio no es para él entonces regresa oficio a su jefe directo. Regresa al paso 15.
+		\item Termina proceso.
+	\end{enumerate}
 	
 	\begin{figure}[htbp!]
 		\centering
 			\includegraphics[width=1\textwidth]{images/antecedentes/registraroficio.png}
-		\caption{Diagrama de registro de oficios entrantes.}
+		\caption{Diagrama de procesos de oficios entrantes.}
 		\label{fig:OficiosEntrantes}
 	\end{figure}
 	
-	
-	
-	\subsubsection{Oficios de respuesta y salientes}
-	La figura \ref{fig:OficiosRespuesta} muestra cómo es el proceso de elaboración, evaluación y envío de oficios externos de respuesta de CMPL.
+	\subsubsection{Oficios de respuesta}
+	La figura \ref{fig:OficiosRespuesta} muestra cómo es el proceso de elaboración, evaluación y envío de oficios externos de respuesta del CMPL.
 	
 	\begin{figure}[htbp!]
 		\centering
-			\includegraphics[width=1\textwidth]{images/antecedentes/respondeoficio.png}
-		\caption{Diagrama de registro de oficios de respuesta.}
+			\includegraphics[width=1.2\textwidth]{images/antecedentes/respondeoficio.png}
+		\caption{Diagrama de procesos de oficios de respuesta.}
 		\label{fig:OficiosRespuesta}
+	\end{figure}
+	
+	\subsubsection{Oficios de salientes}
+	La figura \ref{fig:OficiosSalientes} muestra cómo es el proceso de elaboración, evaluación y envío de oficios salientes del CMPL.
+	
+	\begin{figure}[htbp!]
+		\centering
+			\includegraphics[width=1.2\textwidth]{images/antecedentes/oficiosaliente.png}
+		\caption{Diagrama de procesos de oficios salientes.}
+		\label{fig:OficiosSalientes}
 	\end{figure}
 
 	
