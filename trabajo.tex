@@ -23,13 +23,28 @@
 			\begin{itemize}
 				\item Trayectoria principal:
 					\begin{enumerate}
-						\item El actor va a la sección de correspondencia 
+						\item El actor da clic en el menú de herramientas administrativas.
+						\item La aplicación muestra el menú de herramientas administrativas.
+						\item El actor da clic en la opción ``Gestionar usuarios''.
+						\item La aplicación muestra la pantalla \IUref{IU32}, de gestión de usuarios.
+						\item El actor da clic en el botón ``Nuevo usuario''.
+						\item La aplicación muestra la pantalla \IUref{33}, de registro de nuevos usuarios.
+						\item El actor llena los campos con los datos requeridos por el formulario.
+						\item El actor da clic en ``Registrar''.
+						\item La aplicación verifica que el Nombre, Apellido Paterno, Apellido Materno y Correo Electrónico no sean parte de otro usuario registrado en la aplicación. \textsl{Trayectoria alternativa A}
+						\item La aplicación verifica que la información ingresada en los dos campos de contraseña sean idénticos. \textsl{Trayectoria alternativa B}
+						\item La aplicación registra los datos del nuevo usuario.
+						\item La aplicación muestra la pantalla \IUref{IU32}, con un mensaje de confirmación que dice ``Cuenta de usuario creada correctamente''.
 					\end{enumerate}
 				\item Trayectorias alternativas:
 					\begin{itemize}
-						\item Trayectoria alternativa A:
+						\item Trayectoria alternativa A: Cuando los datos ingresados en la aplicación ya han sido registrados anteriormente.
 							\begin{enumerate}
-								\item La aplicación muestra un mensaje de error.
+								\item La aplicación muestra la pantalla \IUref{IU33}, con el mensaje de ``Ya hay un registro con los datos de este usuario''. Regresa al paso 7.
+							\end{enumerate}
+						\item Trayectoria alternativa B: Cuando las contraseñas ingresadas no coinciden.
+							\begin{enumerate}
+								\item La aplicación muestra la pantalla \IUref{IU33}, con el mensaje de ``Las contraseñas introducidas no coinciden''. Regresa al paso 7.
 							\end{enumerate}
 					\end{itemize}
 			\end{itemize}
@@ -45,13 +60,24 @@
 			\begin{itemize}
 				\item Trayectoria principal:
 					\begin{enumerate}
-						\item El actor va a la sección de correspondencia 
+						\item El actor da clic en el menú de herramientas administrativas.
+						\item La aplicación muestra el menú de herramientas administrativas.
+						\item El actor da clic en la opción ``Gestionar usuarios''.
+						\item La aplicación muestra la pantalla \IUref{IU32}, de gestión de usuarios.
+						\item El actor selecciona de la tabla que se muestra en \IUref{IU32} el usuario que desea editar.
+						\item El actor selecciona la opción ``Modificar datos'' del menú de acciones del usuario a modificar.
+						\item La aplicación muestra la pantalla \IUref{IU34}, de modificación de usuarios.
+						\item El actor modifica los campos con los datos requeridos por el formulario.
+						\item El actor da clic en ``Guardar''.
+						\item La aplicación verifica que el Nombre, Apellido Paterno, Apellido Materno y Correo Electrónico no sean parte de otro usuario registrado en la aplicación. \textsl{Trayectoria alternativa A}
+						\item La aplicación actualiza los datos del nuevo usuario.
+						\item La aplicación muestra la pantalla \IUref{IU32}, con un mensaje de confirmación que dice ``Datos de usuario modificados correctamente''.
 					\end{enumerate}
 				\item Trayectorias alternativas:
 					\begin{itemize}
-						\item Trayectoria alternativa A:
+						\item Trayectoria alternativa A: Cuando los datos ingresados en la aplicación ya han sido registrados anteriormente.
 							\begin{enumerate}
-								\item La aplicación muestra un mensaje de error.
+								\item La aplicación muestra la pantalla \IUref{IU34}, con el mensaje de ``Ya hay un registro con los datos de este usuario''. Regresa al paso 7.
 							\end{enumerate}
 					\end{itemize}
 			\end{itemize}
@@ -67,15 +93,15 @@
 			\begin{itemize}
 				\item Trayectoria principal:
 					\begin{enumerate}
-						\item El actor va a la sección de correspondencia 
+						\item El actor da clic en el menú de herramientas administrativas.
+						\item La aplicación muestra el menú de herramientas administrativas.
+						\item El actor da clic en la opción ``Gestionar usuarios''.
+						\item La aplicación muestra la pantalla \IUref{IU32}, de gestión de usuarios.
+						\item El actor selecciona de la tabla que se muestra en \IUref{IU32} el usuario que desea desactivar.
+						\item El actor selecciona la opción ``Inhabilitar usuario'' del menú de acciones del usuario a modificar.
+						\item La aplicación cambia el estado de ``Activo'' a ``Inactivo'' del usuario seleccionado en la base de datos.
+						\item La aplicación muestra la pantalla \IUref{IU32}, con un mensaje de confirmación que dice ``Usuario inhabilitado correctamente''.
 					\end{enumerate}
-				\item Trayectorias alternativas:
-					\begin{itemize}
-						\item Trayectoria alternativa A:
-							\begin{enumerate}
-								\item La aplicación muestra un mensaje de error.
-							\end{enumerate}
-					\end{itemize}
 			\end{itemize}
 			
 		\subsubsection{CU5: Activar cuenta de usuario}
@@ -89,15 +115,15 @@
 			\begin{itemize}
 				\item Trayectoria principal:
 					\begin{enumerate}
-						\item El actor va a la sección de correspondencia 
+						\item El actor da clic en el menú de herramientas administrativas.
+						\item La aplicación muestra el menú de herramientas administrativas.
+						\item El actor da clic en la opción ``Gestionar usuarios''.
+						\item La aplicación muestra la pantalla \IUref{IU32}, de gestión de usuarios.
+						\item El actor selecciona de la tabla que se muestra en \IUref{IU32} el usuario que desea activar.
+						\item El actor selecciona la opción ``Habilitar usuario'' del menú de acciones del usuario a modificar.
+						\item La aplicación cambia el estado de ``Inactivo'' a ``Activo'' del usuario seleccionado en la base de datos.
+						\item La aplicación muestra la pantalla \IUref{IU32}, con un mensaje de confirmación que dice ``Usuario habilitado correctamente''.
 					\end{enumerate}
-				\item Trayectorias alternativas:
-					\begin{itemize}
-						\item Trayectoria alternativa A:
-							\begin{enumerate}
-								\item La aplicación muestra un mensaje de error.
-							\end{enumerate}
-					\end{itemize}
 			\end{itemize}
 			
 		\subsubsection{CU6: Ver directorio interno del CMPL}
@@ -111,15 +137,9 @@
 			\begin{itemize}
 				\item Trayectoria principal:
 					\begin{enumerate}
-						\item El actor va a la sección de correspondencia 
+						\item El actor va a la sección de menú y selecciona ``Directorio CMPL''.
+						\item La aplicación muestra la pantalla \IUref{35, con una tabla que muestra por departamento el directorio interno del CMPL por nombre completo, cargo, extensión y correo electrónico.}
 					\end{enumerate}
-				\item Trayectorias alternativas:
-					\begin{itemize}
-						\item Trayectoria alternativa A:
-							\begin{enumerate}
-								\item La aplicación muestra un mensaje de error.
-							\end{enumerate}
-					\end{itemize}
 			\end{itemize}
 			
 		\subsubsection{CU7: Ver directorio interno del CMPL por área o departamento}
@@ -133,15 +153,12 @@
 			\begin{itemize}
 				\item Trayectoria principal:
 					\begin{enumerate}
-						\item El actor va a la sección de correspondencia 
+						\item El actor va a la sección de menú y selecciona ``Directorio CMPL''.
+						\item La aplicación muestra la pantalla \IUref{IU35}, con una tabla que muestra por departamento el directorio interno del CMPL por nombre completo, cargo, extensión y correo electrónico.
+						\item El actor selecciona el departamento que desea consultar en específico en la opción ``Buscar por departamento''.
+						\item El actor da clic en el botón ``Consultar''.
+						\item La aplicación muestra la pantalla \IUref{IU35}, con la información del personal del departamento seleccionado. 
 					\end{enumerate}
-				\item Trayectorias alternativas:
-					\begin{itemize}
-						\item Trayectoria alternativa A:
-							\begin{enumerate}
-								\item La aplicación muestra un mensaje de error.
-							\end{enumerate}
-					\end{itemize}
 			\end{itemize}
 			
 		\subsubsection{CU8: Buscar empleado del CMPL por nombre}
