@@ -1,27 +1,46 @@
 Para la problemática presentada anteriormente presentamos en esta sección: el objetivo, objetivos específicos, la justificación, el alcance y la descripción de la propuesta de solución.\\
 
 %Definir correspondencia
-
+%introduccion 
 \section{Objetivo}
 
 Para mitigar las causas y reducir el impacto de los problemas que se tienen nos basamos en el siguiente objetivo: \\
 
-Desarrollar e implementar una aplicación web para el apoyo en el control de la correspondencia del CMPL. \\
+Desarrollar e implementar una aplicación web que apoye a las tareas de recepción y entrega de correspondencia interna y externa del CMPL. \\
 
 \subsection{Objetivos Específicos}
 
 \begin{itemize}
-	\item Cubrir los lineamientos establecidos para el control de correspondencia en el Manual de Procedimientos del CMPL.
-	\item Tener un respaldo electrónico de los oficios y memorándums para posterior consulta.
-	\item Llevar un registro de los oficios entrantes y salientes.
-	\item Notificar al personal que tiene correspondencia por atender.
-	\item Dar seguimiento a los asuntos que se deben atender.
+	\item Ayudar al personal del CMPL a cumplir los líneamientos establecidos. %cuales 
+	\item Que la aplicación apoye a la consulta de correspondencia entrante y saliente.
+	\item Que la aplicación envíe notificaciones al destinatario.
+	\item Que la aplicación apoye a ver el seguimiento de los asuntos que se deben atender.
 \end{itemize}
 
+Para dejar de una manera más clara los objetivos mencionados, en la siguiente sección se presenta...
+
 \section{Justificación}
-Con este trabajo se mitigarán las causas de algunos de los problemas mencionados como: que el registro de los oficios se lleve de manera adecuada, se tenga un respaldo digital del oficio, que se restringa el acceso a la información confidencial al personal indicado, que se pueda saber a quien se le turna un oficio y a quien se le envía copia, saber el momento en que se respondió, saber si requiere respuesta, saber si el asunto ya fue atendido, saber quien lo entregó, saber quien lo registró, informar a la persona que se le turna que tiene un asunto por atender, que los oficios sean validados, saber la ubicación física de los oficios, además de que cumpliran con la normatividad. Pero sí continua, el rezago tecnológico va a ser necesario que el CMPL adquiera nuevos equipos y que capacite a su personal. \\
-%De acuerdo con los objetivos anteriores 
-%Desarrollar e implementar una aplicación web que fortalezca los procesos de la administración del CMPL.
+
+Con este trabajo se mitigarán las causas de algunos de los problemas mencionados en el capítulo anterior como: 
+%de la siguiente manera || la aplicacion apoyará a: 
+\begin{itemize}
+	\item Que el registro de la correspondencia se lleve de manera adecuada.
+	\item La aplicación resguarde los registros de la correspondencia.
+	\item Que se restrinja el acceso a la información al personal indicado.
+	\item Que se pueda saber a quien se le turna un oficio y a quien se le envía copia.
+	\item Saber el momento en que se respondió.
+	\item Saber si requiere respuesta.
+	\item Saber si el asunto ya fue atendido. 
+	\item Saber quien lo entregó.
+	\item Saber quien lo registró.
+	\item Informar a la persona que se le turna que tiene un asunto por atender.
+	\item Que los oficios sean validados.
+	\item Saber la ubicación física de los oficios. 
+	\item Cumplir con la normatividad.
+\end{itemize}  
+Pero sí continua, el rezago tecnológico va a ser necesario que el CMPL adquiera nuevos equipos y que capacite a su personal. \\
+
+Para el ... algo así como de acuerdo con anterior es necesario que para e l desarrilo del presente trabajo se defina el alcance que tendrá, el cual se describe en la siguienet sección. 
 
 \section{Alcance}
 
@@ -41,7 +60,7 @@ Para presentar de mejor manera el alcance de la aplicación se divide de la sigu
 
 \subsection{Funcionalidad}
 
-La funcionalidad la aplicación se organizará de la siguiente manera: un módulo para la gestión de usuarios, un modulo para la correspondencia interna, un módulo para la correspondencia externa. En la figura \ref{diagrama a bloques} se puede ver de manera más precisa como interactuan los bloques anteriores con los diferentes tipos de usuarios.\\
+La funcionalidad la aplicación se organizará de la siguiente manera: un módulo para la gestión de usuarios, un modulo para la correspondencia interna y un módulo para la correspondencia externa. En la figura \ref{diagrama a bloques} se puede ver de manera general como interactuan los bloques anteriores con los diferentes tipos de usuarios.\\
 
 	\begin{figure}[htbp!]
 		\centering
@@ -50,14 +69,15 @@ La funcionalidad la aplicación se organizará de la siguiente manera: un módul
 		\label{diagrama a bloques}
 	\end{figure}
 
-A continuación se describe cada módulo.
+De acuerdo con la figura anterior, a continuación se describe cada módulo:
 
 \subsubsection{Módulo 1: Gestión de usuarios}
-Este modulo permitirá el registro, la consulta, los cambios y la baja de usuarios; además permitirá el control de acceso a la aplicación para que los usuarios puedan hacer uso de la misma. \\
- 
-Los requerimientos considerados para este módulo son los siguientes:
+Este modulo permitirá el proceso de creación de usuarios, esto es: hacer cambios, dar una contraseña inicial y dar de baja. Es importante tener que cada usuario tenga una cuenta porque una cuenta de usuario hace posible que: se controle el acceso a la información y autentificar la identidad de la persona que ingresa. \\
+%todos los usuarios requieren este si no no lo pueden usar
+
+Las consideraciones para este módulo son los siguientes:
 \begin{itemize}
-	\item El usuario necesita tener una nombre de usuario y una contraseña.
+	\item El usuario requerirá tener una nombre de usuario y una contraseña porque requiere que se cuide la privacidad de la información. De lo contrario no podrá utilizar la aplicación.
 	\item El usuario necesita editar sus datos.
 	\item El usuario necesita un mecanismo para recuperar su contraseña.
 	\item El usuario necesita registrar nuevos usuarios.
@@ -76,15 +96,15 @@ Los requerimientos funcionales que implementa este módulo son:
 	\item[RF] El usuario podrá consultar los usuarios registrados.
 \end{itemize}
 
-Con lo anterior se resuelve que el usuario sólo acceda a la información que le corresponda con las funciones que le correspondan.
+Con las consideraciones y los requerimientos anteriores se resuelve que el usuario sólo acceda a la información que le corresponda con las funciones que le correspondan.
 
 \subsubsection{Modulo 2: Correspondencia Externa}
 Este modulo permitirá el registro, la consulta de la correspondencia que llega al CMPL. \\
 
-Los requerimientos considerados para este módulo son los siquientes:
+Las consideraciones para este módulo son los siquientes:
 
 \begin{itemize}
-	\item El usuario necesita registrar cuando llegue nueva correspondencia.
+	\item El usuario necesita una herramienta para registrar la correspondencia de manera más controlada.
 	\item El usuario necesita subir el oficio en formato digital.
 	\item El usuario necesita consultar los oficios respondidos.
 	\item El usuario necesita consultar el momento en que un oficio fue entregado.
@@ -178,7 +198,7 @@ Es un trabajador del CMPL registrado en el directorio, que no es Jefe del Depart
 	\item Registrar correspondencia saliente.
 	\item Turnar correspondencia.
 	\item Recibir correspondencia.
-	\item Atender observaciones a los oficios registrados.
+	\item Atender observaciones\footnote{Se entiende por observaciones aquellas indicaciones que deben ser atendidas} a los oficios registrados.
 \end{itemize}
 
 \subsubsection{Director}
@@ -201,7 +221,7 @@ Es un trabajador del CMPL que está como encargado de alguna de las diferentes j
 \textbf{Responsabilidades:}
 \begin{itemize}
 	\item Atender correspondencia a nombre del director.
-	\item Manejar los indicadores mensuales.
+	%\item Manejar los indicadores mensuales.
 	\item Cancelar proceso de correspondencia saliente.
 	\item Generar oficios salientes nuevos.
 	\item Dar respuesta a oficios entrantes.
@@ -220,11 +240,13 @@ Es un trabajador del CMPL que esta como encargado en alguna de las subdireccione
 	\item Atender observaciones a los oficios registrados.
 \end{itemize}
 
+De acuerdo con los usuarios y módulos anteriores se requiere que el CMPL cuente con una plataforma para que la aplicación pueda operar, dicha plataforma se describe a continuación. \\
+
 %%%%%%%%%% PLATAFORMA %%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Plataforma}
 
-Para que la aplicación funcione se necesita de los componentes de hardware, software y los servicios. En la figura \ref{arquitectura} se puede ver de una manera mas precisa como interactuan estos componentes. \\
+Para que la aplicación funcione se necesita de los componentes de hardware, software y los servicios. En la figura \ref{arquitectura} se puede ver de una manera general como interactuan estos componentes. \\
 
 \begin{figure}[htbp!]
 		\centering
