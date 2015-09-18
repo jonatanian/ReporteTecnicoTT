@@ -17,7 +17,7 @@ Desarrollar e implementar una aplicación web que apoye a las tareas de recepci�
 	\item Que la aplicación apoye a ver el seguimiento de los asuntos que se deben atender.
 \end{itemize}
 
-Para dejar de una manera más clara los objetivos mencionados, en la siguiente sección se presenta...
+Para dejar de una manera más clara los objetivos mencionados, en la siguiente sección se presenta una juestificación breve.
 
 \section{Justificación}
 
@@ -40,7 +40,7 @@ Con este trabajo se mitigarán las causas de algunos de los problemas mencionado
 \end{itemize}  
 Pero sí continua, el rezago tecnológico va a ser necesario que el CMPL adquiera nuevos equipos y que capacite a su personal. \\
 
-Para el ... algo así como de acuerdo con anterior es necesario que para e l desarrilo del presente trabajo se defina el alcance que tendrá, el cual se describe en la siguienet sección. 
+De acuerdo con anterior es necesario que para el desarrilo del presente trabajo se defina el alcance que tendrá, el cual se describe en la siguiente sección. 
 
 \section{Alcance}
 
@@ -303,11 +303,22 @@ Por último se requiere de los siquientes servicios:
 	\item Configuración de red.
 \end{itemize} 
 
-De acuerdo con los componentes mencionados anteriormente se ...
+%De acuerdo con los componentes mencionados anteriormente se ...
 %%%%%%%%%% PROCEDIMIENTO %%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Procedimiento}
 Con esta propuesta se mejora el procedimiento presentado en el capitulo 1, las principales mejoras son:
+
+\begin{itemize}
+	\item Alertas al usuario: cuando el usuario este utilizando la aplicación está mostrará los asuntos que no ha atendido. 
+	\item Notificaciones al correo: una vez que se turne un oficio, se enviará un correo electrónico al usuario diciendo que tiene un nuevo asunto por atender. 
+	\item Respaldos: el administrador podrá realizar los respaldos de todos los registros de la corespondencia así como los documentos digitales.
+	\item Seguimiento: el seguimiento de la correspondencia se refiere a si ya fue atendido, si está en atención, si fue respondido o si está enterado.
+\end{itemize}
+
+\subsubsection{Oficios entrantes}
+
+En la figura \ref{Registro oficio} se muestra cómo sería el proceso de registro de oficios con la aplicación.
 
 \begin{figure}[htbp!]
 		\centering
@@ -315,13 +326,34 @@ Con esta propuesta se mejora el procedimiento presentado en el capitulo 1, las p
 		\caption{Procedimiento de recepción.}
 		\label{Registro oficio}
 	\end{figure}
-	
-\begin{itemize}
-	\item Alertas al usuario: cuando el usuario este utilizando la aplicación está mostrará los asuntos que no ha atendido. 
-	\item Notificaciones al correo: una vez que se turne un oficio, se enviará un correo electrónico al usuario diciendo que tiene un nuevo asunto por atender. 
-	\item Respaldos: el administrador podrá realizar los respaldos de todos los registros de la corespondencia así como los documentos digitales.
-	\item Seguimiento: el seguimiento de la correspondencia comprende varios estados...
-\end{itemize}
+
+\begin{enumerate}
+	\item Oficialía de partes registrará el oficio en la aplicación.
+	\item Oficialía de partes escanea el documento y guarda el registro. 
+	\item Oficialía de partes turnará al director.
+	\item La aplicación notificará al director.
+	\item El director lo revisa el oficio y ve si es para el.
+	\item Si es para él lo atiende.
+	\item Si no asigna el caracter del oficio (público, privado o confidencial).
+	\item Si es confidencial turna directamente al destinatario. 
+	\item El destinatario recibe y verifica que sea para él.
+	\item Si es para él, atiende el oficio.
+	\item Si no, entonces regresa al Director.
+	\item Si el oficio no es confidencial entonces el Director turna al Subdirector o Jefe correspondiente.
+	\item Éste lo revisará y si es para él lo atiende, si no lo turna al personal.
+	\item El personal lo revisa y verificará si es para él para atenderlo.
+	\item Si no tendrá que ver el si es privado o confidencial y regresarlo a su jefe inmediato.
+\end{enumerate}
+
+\subsubsection{Respuesta oficios}
+
+En la figura \ref{Procedimiento respuesta} se muestra cómo sería el proceso de registro de oficios con la aplicación.
+
+\begin{figure}
+	\centering 
+		\includegraphics[width=0.8\textwidth]{images/propuesta/procesorespuesta}
+	\caption{Procedimiento respuesta.}
+\end{figure}
 
 Con esto se tiene la información general que se podrá manejar dentro de la aplicación, la cual se describe en la siguiente sección.
 
