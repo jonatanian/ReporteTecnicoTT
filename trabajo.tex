@@ -1,9 +1,3 @@
-\section{Requerimientos Funcionales}
-
-\section{Requerimientos No Funcionales}
-
-\section{Reglas de Negocio}
-
 \section{Diagramas de Casos de Uso}
 	En esta sección se presentan los casos de uso diseñados con base en los RF, RNF y RN. Están ordenados por módulos del sistema.
 	\subsection{Módulo de autenticación}
@@ -252,30 +246,11 @@
 							\end{enumerate}
 					\end{itemize}
 			\end{itemize}
-			
-		\subsubsection{CU11: }
-			\begin{figure}[htbp!]
-				\centering
-					%\includegraphics[width=0.8\textwidth]{images/CU/CU3}
-					\caption{Caso de uso n: .}
-				\label{Tabla}
-			\end{figure}
-			
-			\begin{itemize}
-				\item Trayectoria principal:
-					\begin{enumerate}
-						\item El actor va a la sección de correspondencia 
-					\end{enumerate}
-				\item Trayectorias alternativas:
-					\begin{itemize}
-						\item Trayectoria alternativa A:
-							\begin{enumerate}
-								\item La aplicación muestra un mensaje de error.
-							\end{enumerate}
-					\end{itemize}
-			\end{itemize}
+
 
 A continuación se muestran los casos de uso para los oficios.
+
+		\subsubsection{CU11: Registrar oficio saliente}
 \begin{figure}[htbp!]
 		\centering
 			\includegraphics[width=0.8\textwidth]{images/CU/CU11}
@@ -287,15 +262,15 @@ A continuación se muestran los casos de uso para los oficios.
 	\item Trayectoria principal:
 	\begin{enumerate}
 		\item El actor va a la sección de correspondencia 
-		\item La aplicación muestra la pantalla IU4 Correspondencia.
+		\item La aplicación muestra la pantalla \IUref{IU21} Correspondencia.
 		\item El actor presiona el botón “Nuevo oficio”.
-		\item La aplicación muestra la interfaz IU4.1 para el registro de oficios.
+		\item La aplicación muestra la interfaz \IUref{IU10} para el registro de oficios.
 		\item El actor introduce los datos requeridos para el registro del oficio.
 		\item El actor presiona el botón “Adjuntar documento”.
-		\item CU27 Guardar Archivo.
+		\item El actor selecciona el archivo que va a subir.
 		\item El usuario presiona el botón “Registrar”. 
 		\item La aplicación hace la validación de los datos introducidos. \textsl{Trayectoria alternativa A} 
-		\item La aplicación muestra el mensaje MSG2 de que el registro se realizó de forma exitosa.
+		\item La aplicación muestra el mensaje \IUref{MSG2} de que el registro se realizó de forma exitosa.
 		\item Fin del caso de uso.
 	\end{enumerate}
 	
@@ -306,11 +281,12 @@ A continuación se muestran los casos de uso para los oficios.
 				\item La aplicación muestra un mensaje de error.
 				\item La aplicación resalta los campos en el formulario con errores.
 				\item El usuario corrige los errores en el formulario.
-				\item Continua en trayectoria del CU3 en paso 8.
+				\item Continua en trayectoria del CU11 en paso 8.
 			\end{enumerate}
 	\end{itemize}
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\subsubsection{CU12: Registrar oficio entrante}
 	\begin{figure}[htbp!]
 		\centering
 			\includegraphics[width=0.8\textwidth]{images/CU/CU12}
@@ -321,20 +297,35 @@ A continuación se muestran los casos de uso para los oficios.
 \begin{itemize}
 	\item Trayectoria principal:
 	\begin{enumerate}
-		\item 
+		\item	El actor va a la sección de correspondencia 
+\item	El actor da clic en el botón “Oficios entrantes”.
+\item	La aplicación muestra la pantalla \IUref{IU4} Correspondencia Oficios entrantes.
+\item	El actor presiona el botón “Nuevo oficio”.
+\item	La aplicación muestra la interfaz \IUref{IU9} para el registro de oficios entrantes.
+\item	El actor introduce los datos requeridos para el registro del oficio.
+\item	El actor presiona el botón “Adjuntar documento”.
+\item	El actor selecciona el archivo que va a subir.
+\item	El actor presiona el botón “Registrar”.
+\item	La aplicación hace la validación de los datos introducidos.
+\item	La aplicación muestra el mensaje \IUref{MSG2} de que el registro se realizó de forma exitosa.
+\item	La aplicación redirige al usuario a la pantalla \IUref{IU4}.
+\item	CU13 Turnar correspondencia.
+\item	Termina caso de uso.
+
 	\end{enumerate}
 	
 	\item Trayectorias alternativas:
 	\begin{itemize}
-		\item Trayectoria alternativa A:
+		\item Trayectoria alternativa A: Si los datos introducidos no son válidos.
 			\begin{enumerate}
-				\item 
+				\item La aplicación web resalta los datos que no fueron introducidos correctamente. 
+				\item Regresa a la trayectoria principal en paso 5.
 			\end{enumerate}
 	\end{itemize}
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+		\subsubsection{CU13: Turnan oficio}
 \begin{figure}[htbp!]
 		\centering
 			\includegraphics[width=0.8\textwidth]{images/CU/CU13}
@@ -345,20 +336,27 @@ A continuación se muestran los casos de uso para los oficios.
 \begin{itemize}
 	\item Trayectoria principal:
 	\begin{enumerate}
-		\item 
+		\item	El actor va a la sección de correspondencia.
+\item	Selecciona el tipo de correspondencia que desea turnar (oficio entrante o saliente, memorándum enviado o recibido).
+\item	La aplicación muestra la pantalla \IUref{IU4} Correspondencia correspondiente.
+\item	El actor presiona el botón “Acciones” de la correspondencia interesada.
+\item	El actor presiona la opción “Turnar a” del documento que desee turnar.
+\item	La aplicación muestra la pantalla \IUref{IU38} para turnar correspondencia.
+\item	El actor ingresa el nombre en el campo de búsqueda de la persona a la cual desea turnar el documento o la selecciona por departamento y presiona “Buscar”.
+\item	La aplicación regresa la pantalla con los resultados de la búsqueda.
+\item	El actor presiona el botón “Añadir” del registro de la persona a la que desea turnar el documento.
+\item	La aplicación muestra en la pantalla una tabla con los nombres y departamentos de las personas a las que se les indicó como “Añadir” en el paso 9.
+\item	El actor da clic en el botón “Turnar correspondencia”.
+\item	La aplicación registra dicha operación en la base de datos.
+\item	La aplicación muestra el mensaje \IUref{MSG5} de que la operación se realizó con éxito.
+\item	Termina caso de uso.
+
 	\end{enumerate}
 	
-	\item Trayectorias alternativas:
-	\begin{itemize}
-		\item Trayectoria alternativa A:
-			\begin{enumerate}
-				\item 
-			\end{enumerate}
-	\end{itemize}
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+		\subsubsection{CU14: Guardar acuse}
 \begin{figure}[htbp!]
 		\centering
 			\includegraphics[width=0.8\textwidth]{images/CU/CU14}
@@ -369,20 +367,21 @@ A continuación se muestran los casos de uso para los oficios.
 \begin{itemize}
 	\item Trayectoria principal:
 	\begin{enumerate}
-		\item 
+		\item 	El actor va a la sección de correspondencia.
+\item	El actor selecciona en el menú “Oficios” la opción “Oficios salientes”.
+\item	La aplicación muestra la pantalla \IUref{IU21} Correspondencia Oficios salientes.
+\item	El actor da clic en el botón “Adjuntar documento”.
+\item	El actor da clic en el botón “Subir”.
+\item	La aplicación guarda en el Servidor el documento PDF y registra su ruta de acceso en la BD.
+\item	La aplicación muestra la pantalla \IUref{IU21} con un mensaje de confirmación de la operación.
+Termina caso de uso.
+
 	\end{enumerate}
 	
-	\item Trayectorias alternativas:
-	\begin{itemize}
-		\item Trayectoria alternativa A:
-			\begin{enumerate}
-				\item 
-			\end{enumerate}
-	\end{itemize}
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+		\subsubsection{CU15: Generar Id de oficio}
 \begin{figure}[htbp!]
 		\centering
 			\includegraphics[width=0.8\textwidth]{images/CU/CU15}
@@ -393,20 +392,17 @@ A continuación se muestran los casos de uso para los oficios.
 \begin{itemize}
 	\item Trayectoria principal:
 	\begin{enumerate}
-		\item 
+		\item 	La aplicación web hace una consulta a la base de datos solicitando el último id de oficio registrado.
+\item	La aplicación genera el siguiente Id consecutivo.
+\item	La aplicación regresa al CU origen. 
+\item	Termina caso de uso.
+
 	\end{enumerate}
 	
-	\item Trayectorias alternativas:
-	\begin{itemize}
-		\item Trayectoria alternativa A:
-			\begin{enumerate}
-				\item 
-			\end{enumerate}
-	\end{itemize}
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+		\subsubsection{CU16: Consultar correspondencia por identificador}
 \begin{figure}[htbp!]
 		\centering
 			\includegraphics[width=0.8\textwidth]{images/CU/CU16}
@@ -417,20 +413,31 @@ A continuación se muestran los casos de uso para los oficios.
 \begin{itemize}
 	\item Trayectoria principal:
 	\begin{enumerate}
-		\item 
+		\item	El actor va a la sección de oficios entrantes.
+		\item	A través de los menús da clic en el tipo de correspondencia que desea consultar.
+		\item	La aplicación muestra la pantalla \IUref{IU4} de Correspondencia correspondiente.
+		\item	El actor ingresa el valor la categoría para la búsqueda.
+		\item	El actor selecciona por qué campo desea realizar la búsqueda.
+		\item	El actor presiona el botón “Buscar”.
+		\item	La aplicación valida que el campo de criterio de búsqueda no esté vacío.
+		\item	La aplicación realiza la consulta en la base de datos.
+		\item	La aplicación muestra el mensaje \IUref{MSG6} de operación exitosa.
+		\item	La aplicación muestra los resultados en una tabla.
+		\item	Fin del caso de uso
 	\end{enumerate}
 	
 	\item Trayectorias alternativas:
 	\begin{itemize}
-		\item Trayectoria alternativa A:
+		\item Trayectoria alternativa A: Si está vacío el criterio de búsqueda.
 			\begin{enumerate}
-				\item 
+				\item La aplicación resalta el campo de criterio de búsqueda.
+				\item Continúa en trayectoria principal en paso 4.
 			\end{enumerate}
 	\end{itemize}
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+		\subsubsection{CU17: Consultar correspondencia por fecha de emisión}
 \begin{figure}[htbp!]
 		\centering
 			\includegraphics[width=0.8\textwidth]{images/CU/CU17}
@@ -441,20 +448,31 @@ A continuación se muestran los casos de uso para los oficios.
 \begin{itemize}
 	\item Trayectoria principal:
 	\begin{enumerate}
-		\item 
+		\item	El actor va a la sección de oficios entrantes.
+		\item	A través de los menús da clic en el tipo de correspondencia que desea consultar.
+		\item	La aplicación muestra la pantalla \IUref{IU4} de Correspondencia correspondiente.
+		\item	El actor ingresa el valor la categoría para la búsqueda.
+		\item	El actor selecciona por qué campo desea realizar la búsqueda.
+		\item	El actor presiona el botón “Buscar”.
+		\item	La aplicación valida que el campo de criterio de búsqueda no esté vacío.
+		\item	La aplicación realiza la consulta en la base de datos.
+		\item	La aplicación muestra el mensaje \IUref{MSG6} de operación exitosa.
+		\item	La aplicación muestra los resultados en una tabla.
+		\item	Fin del caso de uso
 	\end{enumerate}
 	
 	\item Trayectorias alternativas:
 	\begin{itemize}
-		\item Trayectoria alternativa A:
+		\item Trayectoria alternativa A: Si está vacío el criterio de búsqueda.
 			\begin{enumerate}
-				\item 
+				\item La aplicación resalta el campo de criterio de búsqueda.
+				\item Continúa en trayectoria principal en paso 4.
 			\end{enumerate}
 	\end{itemize}
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\subsubsection{CU18: Consultar correspondencia por emisor}
 \begin{figure}[htbp!]
 		\centering
 			\includegraphics[width=0.8\textwidth]{images/CU/CU18}
@@ -465,16 +483,52 @@ A continuación se muestran los casos de uso para los oficios.
 \begin{itemize}
 	\item Trayectoria principal:
 	\begin{enumerate}
-		\item 
+		\item	El actor va a la sección de oficios entrantes.
+		\item	A través de los menús da clic en el tipo de correspondencia que desea consultar.
+		\item	La aplicación muestra la pantalla \IUref{IU4} de Correspondencia correspondiente.
+		\item	El actor ingresa el valor la categoría para la búsqueda.
+		\item	El actor selecciona por qué campo desea realizar la búsqueda.
+		\item	El actor presiona el botón “Buscar”.
+		\item	La aplicación valida que el campo de criterio de búsqueda no esté vacío.
+		\item	La aplicación realiza la consulta en la base de datos.
+		\item	La aplicación muestra el mensaje \IUref{MSG6} de operación exitosa.
+		\item	La aplicación muestra los resultados en una tabla.
+		\item	Fin del caso de uso
 	\end{enumerate}
 	
 	\item Trayectorias alternativas:
 	\begin{itemize}
-		\item Trayectoria alternativa A:
+		\item Trayectoria alternativa A: Si está vacío el criterio de búsqueda.
 			\begin{enumerate}
-				\item 
+				\item La aplicación resalta el campo de criterio de búsqueda.
+				\item Continúa en trayectoria principal en paso 4.
 			\end{enumerate}
 	\end{itemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{CU19: Cancelar proceso de correspondencia}
+\begin{figure}[htbp!]
+		\centering
+			\includegraphics[width=0.8\textwidth]{images/CU/CU19}
+		\caption{Caso de uso 19: Cancelar proceso de correspondencia.}
+		\label{Tabla}
+	\end{figure}
+	
+\begin{itemize}
+	\item Trayectoria principal:
+	\begin{enumerate}
+		\item El actor va a la sección de correspondencia.
+		\item	La aplicación muestra la pantalla \IUref{IU21} Correspondencia saliente.
+		\item	CU16, CU17 o CU18 Consultar correspondencia.
+		\item	El actor presiona el botón “Acciones” de la correspondencia a cancelar.
+		\item	El actor selecciona la opción “Cancelar oficio” o “Cancelar memorándum”.
+		\item	La aplicación cambia el estatus de la correspondencia en la base de datos.
+		\item	La aplicación muestra el mensaje MSG5 de que el cambio de estatus se ha llevado a cabo de forma correcta.
+\item	Termina caso de uso.
+
+	\end{enumerate}
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
