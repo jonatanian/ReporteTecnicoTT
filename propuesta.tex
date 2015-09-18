@@ -240,10 +240,13 @@ Es un trabajador del CMPL que esta como encargado en alguna de las subdireccione
 	\item Atender observaciones a los oficios registrados.
 \end{itemize}
 
-De acuerdo con los usuarios y módulos anteriores se requiere que el CMPL cuente con una plataforma para que la aplicación pueda operar, dicha plataforma se describe a continuación. \\
+De acuerdo con los usuarios y módulos anteriores se requiere que el CMPL cuente con una plataforma para que la aplicación pueda operar dicha plataforma se muestra a continuación.
+%y para que esto sea posible se realizó un estudio de factibilidad de los recursos técnicos necesarios para su funcionamento. \\
 
 %%%%%%%%%% PLATAFORMA %%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection{Estudio de Factibilidad}
+
 \subsection{Plataforma}
 
 Para que la aplicación funcione se necesita de los componentes de hardware, software y los servicios. En la figura \ref{arquitectura} se puede ver de una manera general como interactuan estos componentes. \\
@@ -254,12 +257,12 @@ Para que la aplicación funcione se necesita de los componentes de hardware, sof
 		\caption{Arquitectura de la Aplicación.}
 		\label{arquitectura}
 	\end{figure}
-	
+
 \subsubsection{Hardware}
 
-Dentro del hardware se requiere que el CMPL cuente con:
+Dentro del hardware el CMPL actualemnte cuenta con:
 \begin{enumerate}
-	\item Un servidor para que de el servicio a las computadoras, aloje la aplicación así como los registros de la correspondencia y se hagan los respaldos. Este servidor deberá contar con: 
+	\item Un servidor que de el servicio a las computadoras, aloje la aplicación así como los registros de la correspondencia y se hagan los respaldos. Este servidor deberá contar con: 
 	\begin{itemize}
 		\item Al menos con 500 GB de disco duro.
 		\item Un monitor.
@@ -300,6 +303,7 @@ Por último se requiere de los siquientes servicios:
 	\item Configuración de red.
 \end{itemize} 
 
+De acuerdo con los componentes mencionados anteriormente se ...
 %%%%%%%%%% PROCEDIMIENTO %%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Procedimiento}
@@ -330,10 +334,13 @@ Para la información a manejar dentro de la aplicación de manera general se com
 	\item Usuarios: Nombre completo, departamento al que pertenece, rol que desempeña dentro de la aplicación, contraseña y correo electrónico.
 	\item Oficio entrante: número de oficio, fecha de redacción, área que emite, emisor, cargo del emisor, destinatario, cargo del destinatario, dependencia, asunto, fecha de acuse, nombre de quien entrega, si requiere o no respuesta, a quien se le turnó, a quien se le envió copia y si tiene documentos adjuntos. Además contará con un selector de archivos que permite la carga del documento escaneado en formato PDF y adjuntarlo al registro.
 	\item Oficio saliente: número de oficio, fecha de redacción, área que emite, emisor, cargo del emisor, destinatario, cargo del destinatario, dependencia, asunto, fecha de acuse, nombre de quien entrega, si es respuesta a un oficio anterior y si tiene documentos adjuntos.
-	\item Memorándum: fecha de redacción, destinatario, cargo del destinatario, departamento, asunto, área que emite, emisor, cargo del emisor, si require respuesta. 
+	\item Memorándum: fecha de redacción, destinatario, cargo del destinatario, departamento, asunto, área que emite, emisor, cargo del emisor, si require respuesta.  
+	\item Dependencias: Nombre de la dependencia y acrónimo de la dependencia.
 \end{itemize}
 
 Para los documentos (oficios entrantes, salientes y memorándums) se manejarán a parte, sólo se escanean y se guardan dentro de la aplicación. 
+
+Con toda la información a manejar surgen algunas propiedades a considerar para la operación de la acplicación, dichas propiedades se definen a continuacion.\\
 
 %%%%%%%%%% PROPIEDADES DE SW %%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
