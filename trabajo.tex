@@ -9,6 +9,48 @@
 					\caption{Caso de uso 1: Inicio de sesión.}
 				\label{Tabla}
 			\end{figure}
+			\begin{itemize}
+	\item Trayectoria principal:
+		\begin{enumerate}
+			\item El actor solicita iniciar sesión presionando el botón “Acceder” en la \IUref{IU1}.
+			\item La aplicación solicita al actor que se identifique mostrando la pantalla \IUref{IU2}.
+			\item El actor ingresa su correo institucional y contraseña en la interfaz.
+			\item El actor solicita autenticación en la aplicación pulsando el botón “Iniciar sesión”. 
+			\item La aplicación hace la consulta a la base de datos con los datos introducidos.
+			\item La aplicación verifica que el usuario y la contraseña sean correctos.
+			\item La aplicación verifica el tipo de usuario que se autenticó.
+			\item Fin de caso de uso.
+
+		\end{enumerate}
+	\item Trayectorias alternativas:
+		\begin{itemize}
+			\item Trayectoria alternativa A: Si los datos introducidos no son correctos.
+				\begin{enumerate}
+					\item La aplicación muestra el mensaje \IUref{MSG1} pidiendo verificar correo institucional y/o contraseña.
+					\item Continua en trayectoria principal en paso 3.
+				\end{enumerate}
+			\item Trayectoria alternativa B: Si es Director.
+				\begin{enumerate}
+					\item La aplicación muestra la pantalla \IUref{IU27}.
+					\item Continua trayectoria principal.
+				\end{enumerate}
+			\item Trayectoria alternativa C: Si es Oficialía de partes.
+				\begin{enumerate}
+					\item La aplicación muestra la pantalla \IUref{IU3}.
+					\item Continua trayectoria principal.
+				\end{enumerate}
+			\item Trayectoria alternativa D: Si es Jefe de Departamento o Subdirector.
+				\begin{enumerate}
+					\item La aplicación muestra la pantalla \IUref{IU26}.
+					\item Continua trayectoria principal.
+				\end{enumerate}
+			\item Trayectoria alternativa E: Si es Administrativo.
+				\begin{enumerate}
+					\item La aplicación muestra la pantalla \IUref{IU28}.
+					\item Continua trayectoria principal.
+				\end{enumerate}
+		\end{itemize}
+\end{itemize}
 	\subsection{Módulo de Gestión de Usuarios}
 	El módulo de Gestión de Usuarios poseé los siguientes casos de uso.
 	
@@ -138,7 +180,7 @@
 				\item Trayectoria principal:
 					\begin{enumerate}
 						\item El actor va a la sección de menú y selecciona ``Directorio CMPL''.
-						\item La aplicación muestra la pantalla \IUref{35, con una tabla que muestra por departamento el directorio interno del CMPL por nombre completo, cargo, extensión y correo electrónico.}
+						\item La aplicación muestra la pantalla \IUref{35}, con una tabla que muestra por departamento el directorio interno del CMPL por nombre completo, cargo, extensión y correo electrónico.
 					\end{enumerate}
 			\end{itemize}
 			
