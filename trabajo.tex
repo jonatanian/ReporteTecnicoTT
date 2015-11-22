@@ -11,15 +11,46 @@
 		\label{diagrama de cu}
 	\end{figure}
 	
-		\subsubsection{CU1: Iniciar sesión}
-			\begin{figure}[htbp!]
-				\centering
-					\includegraphics[width=0.8\textwidth]{images/CU/CU1}
-					\caption{Caso de uso 1: Inicio de sesión.}
-				\label{Tabla}
-			\end{figure}
-			\begin{itemize}
-			
+	\begin{UseCase}{CU1}{Iniciar Sesión}{
+		Ayudar a que los Estudiantes que están por terminar la carrera se puedan inscribir en un Seminario de titulación.
+	}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Personal, Administrador, Oficialía de partes.}
+		\UCitem{Propósito}{Que el personal del CMPL pueda hacer uso total de la aplicación}
+		\UCitem{Resumen}{Ayudar al personal del CMPL a tener un control de acceso a la aplicación.}
+		\UCitem{Entradas}{Email, password.}
+		\UCitem{Salidas}{Pantalla de bienvenida.}
+		\UCitem{Precondiciones}{El personal debe estar registrado en la BD.}
+		\UCitem{Postcondiciones}{El personal puede hacer uso de la aplicación.}
+		\UCitem{Referencia}{-}
+		\UCitem{Errores}{Error en la conexión a la base de datos.
+		Si el personal ingresa mal su nombre de usuario y/o contraseña mostrará mensaje en pantalla "Correo institucional y/o contraseña incorrectos. Intento de nuevo."}
+		\UCitem{Autor}{Ian Castañeda.}
+		\UCitem{Revisó}{Oscar Alcántara.}
+	\end{UseCase}
+	
+		%\subsubsection{CU1: Iniciar sesión}
+		%	\begin{figure}[htbp!]
+		%		\centering
+		%			\includegraphics[width=0.8\textwidth]{images/CU/CU1}
+		%			\caption{Caso de uso 1: Inicio de sesión.}
+		%		\label{Tabla}
+		%	\end{figure}
+		%	\begin{itemize}
+	\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor] Solicita iniciar sesión presionando el botón  \IUref{UI1}{Pantalla de Control de Acceso}\label{CU17Login}.
+		\UCpaso Verifica que el Estudiante sea elegible para inscribirse al Seminario con base en la regla \BRref{BR129}{Determinar si un Estudiante puede inscribir Seminario.} \Trayref{A}.
+		\UCpaso Despliega la \IUref{UI32}{Pantalla de Selección de Seminario} con la lista de Seminarios Disponibles.
+		\UCpaso[\UCactor] Selecciona el Seminario en el que desea inscribirse \Trayref{B}
+		
+2. La aplicacion solicita al actor que se identique mostrando la pantalla IU2 .
+3. El actor ingresa su correo institucional y contrase~na en la interfaz.
+4. El actor solicita autenticacion en la aplicacion pulsando el boton \Iniciar sesion".
+5. La aplicacion hace la consulta a la base de datos con los datos introducidos.
+6. La aplicacion verica que el usuario y la contrase~na sean correctos.
+7. La aplicacion verica el tipo de usuario que se autentico.
+8. Fin de caso de uso.	
+	
 	\item Trayectoria principal:
 		\begin{enumerate}
 			\item El actor solicita iniciar sesión presionando el botón “Acceder” en la \IUref{IU1}.
