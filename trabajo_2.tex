@@ -1,0 +1,60 @@
+\begin{UseCase}{CU9}{Registrar oficio entrante}{Cuando lleguen oficios al CMPL el usuario de Oficialía de Partes podrá llevar un registro de todos los oficios que llegan al CMPL dentro de la aplicación web, impidiendo así tener un descontrol sobre el manejo de los oficios cuando llegan.}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Oficialía de Partes}
+		\UCitem{Propósito}{Que oficialía de partes}
+		%\UCitem{Resumen}{Ayudar al personal del CMPL a tener un control de acceso a la aplicación.}
+		\UCitem{Entradas}{Nombre del emisor, cargo, área, dependencia, número de oficio, Fecha de emisión, dirigido a, fecha de recepción, asunto, anexo y descripción.}
+		\UCitem{Salidas}{Oficio registrado en }
+		\UCitem{Precondiciones}{}
+		\UCitem{Postcondiciones}{Oficio registrado en la aplicación. Se turna en automático al director}
+		\UCitem{Referencia}{CU}
+		\UCitem{Errores}{Error en los datos introducidos}
+		\UCitem{Autor}{Ian Castañeda.}
+		\UCitem{Revisó}{Oscar Alcántara.}
+	\end{UseCase}
+
+\begin{itemize}	
+	\item Trayectoria principal:
+		\begin{enumerate}
+			\item El actor solicita iniciar sesión presionando el botón “Acceder” en la \IUref{IU1}.
+			\item La aplicación solicita al actor que se identifique mostrando la pantalla \IUref{IU2}.
+			\item El actor ingresa su correo institucional y contraseña en la interfaz.
+			\item El actor solicita autenticación en la aplicación pulsando el botón “Iniciar sesión”. 
+			\item La aplicación hace la consulta a la base de datos con los datos introducidos.
+			\item La aplicación verifica que el usuario y la contraseña sean correctos.
+			\item La aplicación verifica el tipo de usuario que se autenticó.
+			\item Fin de caso de uso.
+
+		\end{enumerate}
+	\item Trayectorias alternativas:
+		\begin{itemize}
+			\item Trayectoria alternativa A: Si los datos introducidos no son correctos.
+				\begin{enumerate}
+					\item La aplicación muestra el mensaje \IUref{MSG1} pidiendo verificar correo institucional y/o contraseña.
+					\item Continua en trayectoria principal en paso 3.
+				\end{enumerate}
+			\item Trayectoria alternativa B: Si es Director.
+				\begin{enumerate}
+					\item La aplicación muestra la pantalla \IUref{IU27}.
+					\item Continua trayectoria principal.
+				\end{enumerate}
+			\item Trayectoria alternativa C: Si es Oficialía de partes.
+				\begin{enumerate}
+					\item La aplicación muestra la pantalla \IUref{IU3}.
+					\item Continua trayectoria principal.
+				\end{enumerate}
+			\item Trayectoria alternativa D: Si es Jefe de Departamento o Subdirector.
+				\begin{enumerate}
+					\item La aplicación muestra la pantalla \IUref{IU26}.
+					\item Continua trayectoria principal.
+				\end{enumerate}
+			\item Trayectoria alternativa E: Si es Administrativo.
+				\begin{enumerate}
+					\item La aplicación muestra la pantalla \IUref{IU28}.
+					\item Continua trayectoria principal.
+				\end{enumerate}
+		\end{itemize}
+\end{itemize}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

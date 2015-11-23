@@ -1,9 +1,9 @@
 \section{Diagramas de Casos de Uso}
-	En esta sección se presentan los casos de uso diseñados con base en los RF, RNF y RN. Están ordenados por módulos del sistema.
+	En esta sección se presentan los casos de uso diseñados con base en los RF, RNF y RN. Por razones de espacio, están separados por los módulos del sistema.
 	
 	\subsection{Módulo de Gestión de Usuarios}
-	%El módulo de autenticación tiene el siguiente caso de uso que permitirá al usuario autenticarse en la aplicación para poder hacer uso de ésta.
-	
+	Los casos de uso de este módulo permitirán la creación y mantenimiento de cuentas de usuario, así como la asignación de seguridad en los accesos a la aplicación. 
+
 	\begin{figure}[htbp!]
 		\centering
 			\includegraphics[width=0.8\textwidth]{images/Trabajo/cugestion}
@@ -11,46 +11,42 @@
 		\label{diagrama de cu}
 	\end{figure}
 	
-	\begin{UseCase}{CU1}{Iniciar Sesión}{
-		Ayudar a que los Estudiantes que están por terminar la carrera se puedan inscribir en un Seminario de titulación.
-	}
+	\subsection{Módulo Correspondencia Externa}
+	Los casos de uso de este módulo permitirán registrar, turnar, responder, consultar, dar seguimiento, cancelar, atender, notificar y autorizar a los oficios que llegan al CMPL.
+	
+	\begin{figure}[htbp!]
+		\centering
+			\includegraphics[width=0.8\textwidth]{images/Trabajo/CorrespondenciaExterna}
+		\caption{Diagrama de Casos de Uso. Módulo Correspondencia Externa}
+		\label{diagrama de cu}
+	\end{figure}
+	
+	\subsection{Módulo Correspondencia Interna}
+	Los casos de uso de este módulo permitirán la comunicación interna del CMPL, llevada mediante memorándums. 
+	
+	\begin{figure}[htbp!]
+		\centering
+			\includegraphics[width=0.8\textwidth]{images/Trabajo/CorrespondenciaInterna}
+		\caption{Diagrama de Casos de Uso. Módulo Correspondencia Interna}
+		\label{diagrama de cu}
+	\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Casos de uso gestión de usu	
+	\begin{UseCase}{CU1}{Iniciar Sesión}{Para poder utilizar la aplicación web es necesario que el usuario se autentique dentro de ella, ya que se necesita registrar la fecha de cuándo fue la última vez que inició sesión (para consultas administrativas), para que se le pueda desplegar la pantalla correspondiente y pueda ver su correspondencia personal, así como tener las configuraciones necesarias para reducir el tiempo de registro de oficios y memorándums.}
 		\UCitem{Versión}{0.1}
 		\UCitem{Actor}{Personal, Administrador, Oficialía de partes.}
 		\UCitem{Propósito}{Que el personal del CMPL pueda hacer uso total de la aplicación}
-		\UCitem{Resumen}{Ayudar al personal del CMPL a tener un control de acceso a la aplicación.}
+		%\UCitem{Resumen}{Ayudar al personal del CMPL a tener un control de acceso a la aplicación.}
 		\UCitem{Entradas}{Email, password.}
 		\UCitem{Salidas}{Pantalla de bienvenida.}
 		\UCitem{Precondiciones}{El personal debe estar registrado en la BD.}
 		\UCitem{Postcondiciones}{El personal puede hacer uso de la aplicación.}
 		\UCitem{Referencia}{-}
-		\UCitem{Errores}{Error en la conexión a la base de datos.
-		Si el personal ingresa mal su nombre de usuario y/o contraseña mostrará mensaje en pantalla "Correo institucional y/o contraseña incorrectos. Intento de nuevo."}
+		\UCitem{Errores}{Error en la conexión a la base de datos. Si el personal ingresa mal su nombre de usuario y/o contraseña mostrará mensaje en pantalla 'Correo institucional y/o contraseña incorrectos, Intento de nuevo'.}
 		\UCitem{Autor}{Ian Castañeda.}
 		\UCitem{Revisó}{Oscar Alcántara.}
 	\end{UseCase}
-	
-		%\subsubsection{CU1: Iniciar sesión}
-		%	\begin{figure}[htbp!]
-		%		\centering
-		%			\includegraphics[width=0.8\textwidth]{images/CU/CU1}
-		%			\caption{Caso de uso 1: Inicio de sesión.}
-		%		\label{Tabla}
-		%	\end{figure}
-		%	\begin{itemize}
-	\begin{UCtrayectoria}{Principal}
-		\UCpaso[\UCactor] Solicita iniciar sesión presionando el botón  \IUref{UI1}{Pantalla de Control de Acceso}\label{CU17Login}.
-		\UCpaso Verifica que el Estudiante sea elegible para inscribirse al Seminario con base en la regla \BRref{BR129}{Determinar si un Estudiante puede inscribir Seminario.} \Trayref{A}.
-		\UCpaso Despliega la \IUref{UI32}{Pantalla de Selección de Seminario} con la lista de Seminarios Disponibles.
-		\UCpaso[\UCactor] Selecciona el Seminario en el que desea inscribirse \Trayref{B}
-		
-2. La aplicacion solicita al actor que se identique mostrando la pantalla IU2 .
-3. El actor ingresa su correo institucional y contrase~na en la interfaz.
-4. El actor solicita autenticacion en la aplicacion pulsando el boton \Iniciar sesion".
-5. La aplicacion hace la consulta a la base de datos con los datos introducidos.
-6. La aplicacion verica que el usuario y la contrase~na sean correctos.
-7. La aplicacion verica el tipo de usuario que se autentico.
-8. Fin de caso de uso.	
-	
+
+\begin{itemize}	
 	\item Trayectoria principal:
 		\begin{enumerate}
 			\item El actor solicita iniciar sesión presionando el botón “Acceder” en la \IUref{IU1}.
@@ -94,18 +90,22 @@
 \end{itemize}
 
 \newpage
-
-	\subsection{Módulo de Gestión de Usuarios}
-	El módulo de Gestión de Usuarios poseé los siguientes casos de uso.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{UseCase}{CU2}{Registrar nuevo usuario}{Existen cambios en la administración del CMPL o llegan empleados nuevos, es necesario que los nuevos se registren en la aplicación web para que puedan hacer uso de ésta y así también se pueda mantener el directorio interno del CMPL actualizado.}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Administrador.}
+		\UCitem{Propósito}{Registrar a nuevos usuarios en la aplicación para que puedan hacer uso de ella.}
+		%\UCitem{Resumen}{Ayudar al personal del CMPL a tener un control de acceso a la aplicación.}
+		\UCitem{Entradas}{Nombre, ApPaterno, ApMaterno, Email, Extensión, URLCV, RolId, ÁreaId, CargoID}
+		\UCitem{Salidas}{Mensaje Cuenta creada correctamente}
+		\UCitem{Precondiciones}{Tener al menos un nuevo usuario para registrar.}
+		\UCitem{Postcondiciones}{Usuario registrado en la BD.}
+		%\UCitem{Referencia}{-}
+		\UCitem{Errores}{Error en la conexión a la base de datos.Error en los datos introducidos}
+		\UCitem{Autor}{Ian Castañeda.}
+		\UCitem{Revisó}{Oscar Alcántara.}
+	\end{UseCase}
 	
-		\subsubsection{CU2: Dar de alta empleado del CMPL}
-			\begin{figure}[htbp!]
-				\centering
-					\includegraphics[width=0.8\textwidth]{images/CU/CU2}
-					\caption{Caso de uso 2: Dar de alta empleado del CMPL.}
-				\label{Tabla}
-			\end{figure}
-			
 			\begin{itemize}
 				\item Trayectoria principal:
 					\begin{enumerate}
@@ -136,14 +136,21 @@
 			\end{itemize}
 
 \newpage
-
-		\subsubsection{CU3: Modificar información de un empleado del CMPL}
-			\begin{figure}[htbp!]
-				\centering
-					\includegraphics[width=0.8\textwidth]{images/CU/CU3}
-					\caption{Caso de uso 3: Modificar información de un empleado del CMPL.}
-				\label{Tabla}
-			\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{UseCase}{CU3}{Modificar usuarios}{En ocasiones puede darse el caso de que un registro no tiene la información correcta de un empleado o de que esa información haya cambiado, por lo que es necesario que la aplicación web proporcione una forma de poder editar dichos datos y así mantener la información de los empleados actualizada.}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Administrador.}
+		\UCitem{Propósito}{Mantener actualizada los datos de los usuarios.}
+		%\UCitem{Resumen}{Ayudar al personal del CMPL a tener un control de acceso a la aplicación.}
+		\UCitem{Entradas}{Datos a cambiar. IdUsuario, Nombre, ApPaterno, ApMaterno, Email, Extensión, URLCV, RolId, CargoId, ÁreaId}
+		\UCitem{Salidas}{Usuario actualizado correctamente}
+		\UCitem{Precondiciones}{El personal debe estar registrado en la BD.}
+		\UCitem{Postcondiciones}{Usuario actualizado}
+		%\UCitem{Referencia}{-}
+		\UCitem{Errores}{Error en la conexión a la base de datos. Error en datos introducidos}
+		\UCitem{Autor}{Ian Castañeda.}
+		\UCitem{Revisó}{Oscar Alcántara.}
+	\end{UseCase}
 			
 			\begin{itemize}
 				\item Trayectoria principal:
@@ -171,15 +178,22 @@
 			\end{itemize}
 			
 \newpage
-		
-		\subsubsection{CU4: Desactivar cuenta de usuario}
-			\begin{figure}[htbp!]
-				\centering
-					\includegraphics[width=0.8\textwidth]{images/CU/CU4}
-					\caption{Caso de uso 4: Desactivar cuenta de usuario.}
-				\label{Tabla}
-			\end{figure}
-			
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{UseCase}{CU4}{Desactivar cuenta de usuario}{Esto se dará cuando un empleado deje de laborar dentro del CMPL. Su cuenta no podrá ser eliminada de la aplicación web, ya que a esa cuenta seguramente habrá oficios y memorándums vinculados, pero sí se podrá deshabilitar para que el usuario de esa cuenta ya no pueda entrar a la aplicación web.	}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Administrador.}
+		\UCitem{Propósito}{Que el actor pueda desactivar la cuenta de un usuario.}
+		%\UCitem{Resumen}{}
+		\UCitem{Entradas}{Nombre del usuario, estatus}
+		\UCitem{Salidas}{Mensaje Ususario desactivado correctamente.}
+		\UCitem{Precondiciones}{Que el usuario tenga el estado de activado}
+		\UCitem{Postcondiciones}{La aplicación ya no permitirá el acceso al usuario}
+		\UCitem{Referencia}{CU}
+		\UCitem{Errores}{Error en la conexión a la base de datos.}
+		\UCitem{Autor}{Ian Castañeda.}
+		\UCitem{Revisó}{Oscar Alcántara.}
+	\end{UseCase}		
+
 			\begin{itemize}
 				\item Trayectoria principal:
 					\begin{enumerate}
@@ -195,15 +209,22 @@
 			\end{itemize}
 			
 \newpage
-			
-		\subsubsection{CU5: Activar cuenta de usuario}
-			\begin{figure}[htbp!]
-				\centering
-					\includegraphics[width=0.8\textwidth]{images/CU/CU5}
-					\caption{Caso de uso 5: Activar cuenta de usuario.}
-				\label{Tabla}
-			\end{figure}
-			
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{UseCase}{CU5}{Activar cuenta de usuario}{En el caso de que un exempleado regrese a trabajar al CMPL y haya tenido cuenta en la aplicación web anteriormente, en la aplicación se podrá volver a habilitar su cuenta para que siga trabajando. Sus oficios y memorándums anteriores estarán ahí.}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Administrador.}
+		\UCitem{Propósito}{Que el actor pueda activar la cuenta del usuario que regrese a laborar en el centro.}
+		%\UCitem{Resumen}{Ayudar al personal del CMPL a tener un control de acceso a la aplicación.}
+		\UCitem{Entradas}{Nombre, estado.}
+		\UCitem{Salidas}{Mensaje 'Usuario activado correctamente.'}
+		\UCitem{Precondiciones}{El usuario a activar debe estar desactivado.}
+		\UCitem{Postcondiciones}{El usuario puede acceder a la aplicación.}
+		%\UCitem{Referencia}{-}
+		\UCitem{Errores}{Error en la conexión a la base de datos.}
+		\UCitem{Autor}{Ian Castañeda.}
+		\UCitem{Revisó}{Oscar Alcántara.}
+	\end{UseCase}
+	
 			\begin{itemize}
 				\item Trayectoria principal:
 					\begin{enumerate}
@@ -219,32 +240,21 @@
 			\end{itemize}
 			
 \newpage
-			
-		\subsubsection{CU6: Ver directorio interno del CMPL}
-			\begin{figure}[htbp!]
-				\centering
-					\includegraphics[width=0.8\textwidth]{images/CU/CU6}
-					\caption{Caso de uso 6: Ver directorio interno del CMPL.}
-				\label{Tabla}
-			\end{figure}
-			
-			\begin{itemize}
-				\item Trayectoria principal:
-					\begin{enumerate}
-						\item El actor va a la sección de menú y selecciona ``Directorio CMPL''.
-						\item La aplicación muestra la pantalla \IUref{35}, con una tabla que muestra por departamento el directorio interno del CMPL por nombre completo, cargo, extensión y correo electrónico.
-					\end{enumerate}
-			\end{itemize}
-			
-\newpage
-			
-		\subsubsection{CU7: Ver directorio interno del CMPL por área o departamento}
-			\begin{figure}[htbp!]
-				\centering
-					\includegraphics[width=0.8\textwidth]{images/CU/CU7}
-					\caption{Caso de uso 7: Ver directorio interno del CMPL por área o departamento.}
-				\label{Tabla}
-			\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{UseCase}{CU6}{Filtrar usuarios por departamento}{En el caso de que se desee consultar el directorio interno del CMPL por departamento se podrá hacer. Bastará con elegir el departamento deseado y pedirle a la aplicación web que regrese únicamente los datos de los usuarios de ese departamento.}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Administrador.}
+		\UCitem{Propósito}{Encontrar a un usuario registrado de una manera más rápida.}
+		%\UCitem{Resumen}{}
+		\UCitem{Entradas}{Nombre del departamento.}
+		\UCitem{Salidas}{Usuarios cargados a ese departamento.}
+		\UCitem{Precondiciones}{Que el departamento este registrado, que los usuarios esten registrados y cargados a un departamento.}
+		\UCitem{Postcondiciones}{Actualización de la base de datos.}
+		%\UCitem{Referencia}{-}
+		\UCitem{Errores}{Error en la conexión a la base de datos.}
+		\UCitem{Autor}{Ian Castañeda.}
+		\UCitem{Revisó}{Oscar Alcántara.}
+	\end{UseCase}
 			
 			\begin{itemize}
 				\item Trayectoria principal:
@@ -258,51 +268,26 @@
 			\end{itemize}
 			
 \newpage
-			
-		\subsubsection{CU8: Buscar empleado del CMPL por nombre}
-			\begin{figure}[htbp!]
-				\centering
-					\includegraphics[width=0.8\textwidth]{images/CU/CU8}
-					\caption{Caso de uso 8: Buscar empleado del CMPL por nombre.}
-				\label{Tabla}
-			\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{UseCase}{CU7}{Restablecer contraseña de usuario}{En ocasiones a los usuarios se les olvida su contraseña de acceso a la aplicación web. Cuando eso ocurra podrán acudir con el administrador de la aplicación a pedir que les asigne una nueva contraseña que ellos deberán modificar posteriormente. El administrador podrá restablecer las contraseñas de los usuarios desde la aplicación.}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Administrador.}
+		\UCitem{Propósito}{Permitir recuperar el acceso al personal que lo requiera}
+		%\UCitem{Resumen}{Ayudar al personal del CMPL a tener un control de acceso a la aplicación.}
+		\UCitem{Entradas}{Contraseña nueva.}
+		\UCitem{Salidas}{Contraseña actualizada.}
+		\UCitem{Precondiciones}{Que el usuario no pueda acceder a la aplicación.}
+		\UCitem{Postcondiciones}{Actualización de la contraseña en la BD.}
+		%\UCitem{Referencia}{-}
+		\UCitem{Errores}{Error en la conexión a la base de datos.}
+		\UCitem{Autor}{Ian Castañeda.}
+		\UCitem{Revisó}{Oscar Alcántara.}
+	\end{UseCase}
 			
 			\begin{itemize}
 				\item Trayectoria principal:
 					\begin{enumerate}
-						\item El actor va a la sección de correspondencia 
-						\item El actor da clic en el menú de herramientas administrativas.
-						\item La aplicación muestra el menú de herramientas administrativas.
-						\item El actor da clic en la opción ``Gestionar usuarios''.
-						\item La aplicación muestra la pantalla \IUref{IU32}, de gestión de usuarios.
-						\item El actor introduce en el campo de texto el nombre parcial o completo del usuario que desea localizar y da clic al botón ``Buscar''. 
-						\item La aplicación busca en la base de datos el nombre parcial o completo introducido en el campo de búsqueda. \textsl{Trayectoria alternativa A}
-						\item La aplicación muestra nuevamente la pantalla \IUref{IU32} con los registros que coinciden en parte o totalmente con los datos ingresados en el campo de búsqueda.
-
-					\end{enumerate}
-				\item Trayectorias alternativas:
-					\begin{itemize}
-						\item Trayectoria alternativa A:
-							\begin{enumerate}
-								\item La aplicación muestra un mensaje de error.
-							\end{enumerate}
-					\end{itemize}
-			\end{itemize}
-
-\newpage
-			
-		\subsubsection{CU9: Restablecer contraseña de usuario}
-			\begin{figure}[htbp!]
-				\centering
-					\includegraphics[width=0.8\textwidth]{images/CU/CU9}
-					\caption{Caso de uso 9: Restablecer contraseña de usuario.}
-				\label{Tabla}
-			\end{figure}
-			
-			\begin{itemize}
-				\item Trayectoria principal:
-					\begin{enumerate}
-						\item El actor va a la sección de correspondencia 
 						\item El actor da clic en el menú de herramientas administrativas.
 						\item La aplicación muestra el menú de herramientas administrativas.
 						\item El actor da clic en la opción ``Gestionar usuarios''.
@@ -331,14 +316,21 @@
 			
 			\newpage
 			
-		\subsubsection{CU10: Cambiar contraseña}
-			\begin{figure}[htbp!]
-				\centering
-					\includegraphics[width=0.8\textwidth]{images/CU/CU10}
-					\caption{Caso de uso 10: Cambiar contraseña.}
-				\label{Tabla}
-			\end{figure}
-			
+\begin{UseCase}{CU8}{Cambiar contraseña}{El usuario puede cambiar su contraseña directamente en la aplicación web en caso de que necesite cambiarla, ya sea porque se ha restablecido por parte del administrador o porque el usuario así lo desea.}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Personal.}
+		\UCitem{Propósito}{Que el personal del CMPL pueda cambiar su contraseña.}
+		\UCitem{Resumen}{Ayudar al personal del CMPL a mantener la seguridad de su información.}
+		\UCitem{Entradas}{Contraseña anterior, contraseña nueva.}
+		\UCitem{Salidas}{Contraseña actualizada.}
+		\UCitem{Precondiciones}{Haber iniciado sesión.}
+		\UCitem{Postcondiciones}{Contraseña actualizada.}
+		%\UCitem{Referencia}{-}
+		\UCitem{Errores}{Error en la conexión a la base de datos.}
+		\UCitem{Autor}{Ian Castañeda.}
+		\UCitem{Revisó}{Oscar Alcántara.}
+	\end{UseCase}
+				
 			\begin{itemize}
 				\item Trayectoria principal:
 					\begin{enumerate}
@@ -366,291 +358,5 @@
 					\end{itemize}
 			\end{itemize}
 
-
-A continuación se muestran los casos de uso para los oficios.
-
 \newpage
 
-		\subsubsection{CU11: Registrar oficio saliente}
-\begin{figure}[htbp!]
-		\centering
-			\includegraphics[width=0.8\textwidth]{images/CU/CU11}
-		\caption{Caso de uso 11: Registrar oficio saliente.}
-		\label{Tabla}
-	\end{figure}
-
-\begin{itemize}
-	\item Trayectoria principal:
-	\begin{enumerate}
-		\item El actor va a la sección de correspondencia 
-		\item La aplicación muestra la pantalla \IUref{IU21} Correspondencia.
-		\item El actor presiona el botón “Nuevo oficio”.
-		\item La aplicación muestra la interfaz \IUref{IU10} para el registro de oficios.
-		\item El actor introduce los datos requeridos para el registro del oficio.
-		\item El actor presiona el botón “Adjuntar documento”.
-		\item El actor selecciona el archivo que va a subir.
-		\item El usuario presiona el botón “Registrar”. 
-		\item La aplicación hace la validación de los datos introducidos. \textsl{Trayectoria alternativa A} 
-		\item La aplicación muestra el mensaje \IUref{MSG2} de que el registro se realizó de forma exitosa.
-		\item Fin del caso de uso.
-	\end{enumerate}
-	
-	\item Trayectorias alternativas:
-	\begin{itemize}
-		\item Trayectoria alternativa A:
-			\begin{enumerate}
-				\item La aplicación muestra un mensaje de error.
-				\item La aplicación resalta los campos en el formulario con errores.
-				\item El usuario corrige los errores en el formulario.
-				\item Continua en trayectoria del CU11 en paso 8.
-			\end{enumerate}
-	\end{itemize}
-\end{itemize}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}
-\newpage
-		\subsubsection{CU12: Registrar oficio entrante}
-	\begin{figure}[htbp!]
-		\centering
-			\includegraphics[width=0.8\textwidth]{images/CU/CU12}
-		\caption{Caso de uso 12: Registrar oficio entrante.}
-		\label{Tabla}
-	\end{figure}
-	
-\begin{itemize}
-	\item Trayectoria principal:
-	\begin{enumerate}
-		\item	El actor va a la sección de correspondencia 
-\item	El actor da clic en el botón “Oficios entrantes”.
-\item	La aplicación muestra la pantalla \IUref{IU4} Correspondencia Oficios entrantes.
-\item	El actor presiona el botón “Nuevo oficio”.
-\item	La aplicación muestra la interfaz \IUref{IU9} para el registro de oficios entrantes.
-\item	El actor introduce los datos requeridos para el registro del oficio.
-\item	El actor presiona el botón “Adjuntar documento”.
-\item	El actor selecciona el archivo que va a subir.
-\item	El actor presiona el botón “Registrar”.
-\item	La aplicación hace la validación de los datos introducidos.
-\item	La aplicación muestra el mensaje \IUref{MSG2} de que el registro se realizó de forma exitosa.
-\item	La aplicación redirige al usuario a la pantalla \IUref{IU4}.
-\item	CU13 Turnar correspondencia.
-\item	Termina caso de uso.
-
-	\end{enumerate}
-	
-	\item Trayectorias alternativas:
-	\begin{itemize}
-		\item Trayectoria alternativa A: Si los datos introducidos no son válidos.
-			\begin{enumerate}
-				\item La aplicación web resalta los datos que no fueron introducidos correctamente. 
-				\item Regresa a la trayectoria principal en paso 5.
-			\end{enumerate}
-	\end{itemize}
-\end{itemize}
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-		\subsubsection{CU13: Turnan oficio}
-\begin{figure}[htbp!]
-		\centering
-			\includegraphics[width=0.8\textwidth]{images/CU/CU13}
-		\caption{Caso de uso 13: Turnar oficio.}
-		\label{Tabla}
-	\end{figure}
-	
-\begin{itemize}
-	\item Trayectoria principal:
-	\begin{enumerate}
-		\item	El actor va a la sección de correspondencia.
-\item	Selecciona el tipo de correspondencia que desea turnar (oficio entrante o saliente, memorándum enviado o recibido).
-\item	La aplicación muestra la pantalla \IUref{IU4} Correspondencia correspondiente.
-\item	El actor presiona el botón “Acciones” de la correspondencia interesada.
-\item	El actor presiona la opción “Turnar a” del documento que desee turnar.
-\item	La aplicación muestra la pantalla \IUref{IU38} para turnar correspondencia.
-\item	El actor ingresa el nombre en el campo de búsqueda de la persona a la cual desea turnar el documento o la selecciona por departamento y presiona “Buscar”.
-\item	La aplicación regresa la pantalla con los resultados de la búsqueda.
-\item	El actor presiona el botón “Añadir” del registro de la persona a la que desea turnar el documento.
-\item	La aplicación muestra en la pantalla una tabla con los nombres y departamentos de las personas a las que se les indicó como “Añadir” en el paso 9.
-\item	El actor da clic en el botón “Turnar correspondencia”.
-\item	La aplicación registra dicha operación en la base de datos.
-\item	La aplicación muestra el mensaje \IUref{MSG5} de que la operación se realizó con éxito.
-\item	Termina caso de uso.
-
-	\end{enumerate}
-	
-\end{itemize}
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-		\subsubsection{CU14: Guardar acuse}
-\begin{figure}[htbp!]
-		\centering
-			\includegraphics[width=0.8\textwidth]{images/CU/CU14}
-		\caption{Caso de uso 14: Guardar acuse.}
-		\label{Tabla}
-	\end{figure}
-	
-\begin{itemize}
-	\item Trayectoria principal:
-	\begin{enumerate}
-		\item 	El actor va a la sección de correspondencia.
-\item	El actor selecciona en el menú “Oficios” la opción “Oficios salientes”.
-\item	La aplicación muestra la pantalla \IUref{IU21} Correspondencia Oficios salientes.
-\item	El actor da clic en el botón “Adjuntar documento”.
-\item	El actor da clic en el botón “Subir”.
-\item	La aplicación guarda en el Servidor el documento PDF y registra su ruta de acceso en la BD.
-\item	La aplicación muestra la pantalla \IUref{IU21} con un mensaje de confirmación de la operación.
-Termina caso de uso.
-
-	\end{enumerate}
-	
-\end{itemize}
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-		\subsubsection{CU15: Generar Id de oficio}
-\begin{figure}[htbp!]
-		\centering
-			\includegraphics[width=0.8\textwidth]{images/CU/CU15}
-		\caption{Caso de uso 15: Generar Id de oficio.}
-		\label{Tabla}
-	\end{figure}
-	
-\begin{itemize}
-	\item Trayectoria principal:
-	\begin{enumerate}
-		\item 	La aplicación web hace una consulta a la base de datos solicitando el último id de oficio registrado.
-\item	La aplicación genera el siguiente Id consecutivo.
-\item	La aplicación regresa al CU origen. 
-\item	Termina caso de uso.
-
-	\end{enumerate}
-	
-\end{itemize}
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-		\subsubsection{CU16: Consultar correspondencia por identificador}
-\begin{figure}[htbp!]
-		\centering
-			\includegraphics[width=0.8\textwidth]{images/CU/CU16}
-		\caption{Caso de uso 16: Consultar correspondencia por identificador.}
-		\label{Tabla}
-	\end{figure}
-	
-\begin{itemize}
-	\item Trayectoria principal:
-	\begin{enumerate}
-		\item	El actor va a la sección de oficios entrantes.
-		\item	A través de los menús da clic en el tipo de correspondencia que desea consultar.
-		\item	La aplicación muestra la pantalla \IUref{IU4} de Correspondencia correspondiente.
-		\item	El actor ingresa el valor la categoría para la búsqueda.
-		\item	El actor selecciona por qué campo desea realizar la búsqueda.
-		\item	El actor presiona el botón “Buscar”.
-		\item	La aplicación valida que el campo de criterio de búsqueda no esté vacío.
-		\item	La aplicación realiza la consulta en la base de datos.
-		\item	La aplicación muestra el mensaje \IUref{MSG6} de operación exitosa.
-		\item	La aplicación muestra los resultados en una tabla.
-		\item	Fin del caso de uso
-	\end{enumerate}
-	
-	\item Trayectorias alternativas:
-	\begin{itemize}
-		\item Trayectoria alternativa A: Si está vacío el criterio de búsqueda.
-			\begin{enumerate}
-				\item La aplicación resalta el campo de criterio de búsqueda.
-				\item Continúa en trayectoria principal en paso 4.
-			\end{enumerate}
-	\end{itemize}
-\end{itemize}
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-		\subsubsection{CU17: Consultar correspondencia por fecha de emisión}
-\begin{figure}[htbp!]
-		\centering
-			\includegraphics[width=0.8\textwidth]{images/CU/CU17}
-		\caption{Caso de uso 17: Consultar correspondencia por fecha de emisión.}
-		\label{Tabla}
-	\end{figure}
-	
-\begin{itemize}
-	\item Trayectoria principal:
-	\begin{enumerate}
-		\item	El actor va a la sección de oficios entrantes.
-		\item	A través de los menús da clic en el tipo de correspondencia que desea consultar.
-		\item	La aplicación muestra la pantalla \IUref{IU4} de Correspondencia correspondiente.
-		\item	El actor ingresa el valor la categoría para la búsqueda.
-		\item	El actor selecciona por qué campo desea realizar la búsqueda.
-		\item	El actor presiona el botón “Buscar”.
-		\item	La aplicación valida que el campo de criterio de búsqueda no esté vacío.
-		\item	La aplicación realiza la consulta en la base de datos.
-		\item	La aplicación muestra el mensaje \IUref{MSG6} de operación exitosa.
-		\item	La aplicación muestra los resultados en una tabla.
-		\item	Fin del caso de uso
-	\end{enumerate}
-	
-	\item Trayectorias alternativas:
-	\begin{itemize}
-		\item Trayectoria alternativa A: Si está vacío el criterio de búsqueda.
-			\begin{enumerate}
-				\item La aplicación resalta el campo de criterio de búsqueda.
-				\item Continúa en trayectoria principal en paso 4.
-			\end{enumerate}
-	\end{itemize}
-\end{itemize}
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{CU18: Consultar correspondencia por emisor}
-\begin{figure}[htbp!]
-		\centering
-			\includegraphics[width=0.8\textwidth]{images/CU/CU18}
-		\caption{Caso de uso 18: Consultar correspondencia por emisor.}
-		\label{Tabla}
-	\end{figure}
-	
-\begin{itemize}
-	\item Trayectoria principal:
-	\begin{enumerate}
-		\item	El actor va a la sección de oficios entrantes.
-		\item	A través de los menús da clic en el tipo de correspondencia que desea consultar.
-		\item	La aplicación muestra la pantalla \IUref{IU4} de Correspondencia correspondiente.
-		\item	El actor ingresa el valor la categoría para la búsqueda.
-		\item	El actor selecciona por qué campo desea realizar la búsqueda.
-		\item	El actor presiona el botón “Buscar”.
-		\item	La aplicación valida que el campo de criterio de búsqueda no esté vacío.
-		\item	La aplicación realiza la consulta en la base de datos.
-		\item	La aplicación muestra el mensaje \IUref{MSG6} de operación exitosa.
-		\item	La aplicación muestra los resultados en una tabla.
-		\item	Fin del caso de uso
-	\end{enumerate}
-	
-	\item Trayectorias alternativas:
-	\begin{itemize}
-		\item Trayectoria alternativa A: Si está vacío el criterio de búsqueda.
-			\begin{enumerate}
-				\item La aplicación resalta el campo de criterio de búsqueda.
-				\item Continúa en trayectoria principal en paso 4.
-			\end{enumerate}
-	\end{itemize}
-\end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-\subsubsection{CU19: Cancelar proceso de correspondencia}
-\begin{figure}[htbp!]
-		\centering
-			\includegraphics[width=0.8\textwidth]{images/CU/CU19}
-		\caption{Caso de uso 19: Cancelar proceso de correspondencia.}
-		\label{Tabla}
-	\end{figure}
-	
-\begin{itemize}
-	\item Trayectoria principal:
-	\begin{enumerate}
-		\item El actor va a la sección de correspondencia.
-		\item	La aplicación muestra la pantalla \IUref{IU21} Correspondencia saliente.
-		\item	CU16, CU17 o CU18 Consultar correspondencia.
-		\item	El actor presiona el botón “Acciones” de la correspondencia a cancelar.
-		\item	El actor selecciona la opción “Cancelar oficio” o “Cancelar memorándum”.
-		\item	La aplicación cambia el estatus de la correspondencia en la base de datos.
-		\item	La aplicación muestra el mensaje MSG5 de que el cambio de estatus se ha llevado a cabo de forma correcta.
-\item	Termina caso de uso.
-
-	\end{enumerate}
-\end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
