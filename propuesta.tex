@@ -1,4 +1,4 @@
-Para la problemática presentada anteriormente presentamos en esta sección: el objetivo, objetivos específicos, la justificación, el alcance y la descripción de la propuesta de solución.\\
+Para la problemática presentada anteriormente presentamos en esta sección: el objetivo, objetivos específicos, la justificación, el alcance y la descripción de la propuesta de solución. \\
 
 %Definir correspondencia
 %introduccion 
@@ -240,7 +240,38 @@ Es un trabajador del CMPL que esta como encargado en alguna de las subdireccione
 	\item Atender observaciones a los oficios registrados.
 \end{itemize}
 
-De acuerdo con los usuarios y módulos anteriores se requiere que el CMPL cuente con una plataforma para que la aplicación pueda operar dicha plataforma se muestra a continuación.
+Una vez definidos los módulos del sistema y los roles se encontraron ciertas restricciones sobre la operación las cuales se enlistan a continuación: \\ 
+
+	\subsection{Reglas de Negocio}
+
+\begin{enumerate}
+	\item[RN1] Se considerará como correspondencia todo documento que quede registrado en SISA junto con su copia escaneada.
+	\item[RN2] Sólo serán registrados los documentos de correspondencia que estén firmados por el remitente y con sello correspondiente de la entidad que envía.
+	\item[RN3] El directorio sólo podrá ser modificado por el Administrador.
+	\item[RN4] La información de cursos sólo podrá ser modificada por el Administrador.
+	\item[RN5] El material de apoyo sólo podrá ser modificado por el Administrador.
+	\item[RN6] Sólo los usuarios registrados en el directorio podrán hacer uso de la aplicación web.
+	\item[RN7] No debe existir correspondencia con el mismo número de oficio.
+	\item[RN8] La oficialía de partes terminará con el registro de la correspondencia saliente.
+	\item[RN9] La correspondencia puede ser turnada a más de una persona.
+	\item[RN10] Cada usuario de la aplicación, a excepción del administrador y la oficialía de partes,
+deberá ver sólo la correspondencia que le concierne.
+	\item[RN11] La correspondencia puede o no llevar anexos.
+	\item[RN12] La información de los cursos sólo puede ser visualizada por los empleados del CMPL.
+	\item[RN13] La correspondencia entrante solo puede ser turnada por primera vez al director.
+	\item[RN14] La correspondencia entrante será turnada por la oficialía de partes al personal que debe
+atender el asunto.
+	\item[RN15] La oficialía de partes tiene que agregar como anexo el acuse de la correspondencia que
+salió del CMPL.
+	\item[RN16] Una vez escaneado y turnado el documento de correspondencia entrante, éste documento
+se debe archivar.
+	\item[RN17] La oficialía de partes será el único usuario con el privilegio de cancelar el seguimiento
+de la correspondencia.
+	\item[RN18] En caso de que un oficio sea confidencial podrá ser turnado una vez más.
+	\item[RN19] En caso de que el oficio sea público y requiere respuesta el responsable de atenderlo será el encargado de área.
+\end{enumerate}
+
+De acuerdo con todo lo anterior se requiere que el CMPL cuente con una plataforma para que la aplicación pueda operar dicha plataforma se muestra a continuación.
 %y para que esto sea posible se realizó un estudio de factibilidad de los recursos técnicos necesarios para su funcionamento. \\
 
 %%%%%%%%%% PLATAFORMA %%%%%%%%%%%%%%%
@@ -411,7 +442,7 @@ La interacción de la aplicación con el usuario será mediante pantallas con fo
 
 Elegir una metodología para el desarrollo de software es una de las tarea importante a realizar en todo proyecto ya que cada una ofrece ventajas y desventajas para ciertas situaciones. La metodología que se utiliza para el desarrollo de este trabajo es la metodología en Espiral, la cual consiste en hacer un conjunto de actividades en cada iteración las cuales no tienen prioridad sino que se eligen comenzando por la iteración anterior.\\
 
-La razón por la que se 
+%La razón por la que se 
 % por lo que es necesario analizar cada una de ellas con mucho cuidado, existen algunas metodologías que solo ciertos tipos de proyectos, por lo que dependiendo de lo que proyecto se quiera realizar debe ser la metodología a elegir.\\
 
 Para este proyecto se realizarán 4 iteraciones, en esta primera fase de evaluación se realizaron las primeras dos iteraciones. La primera iteración consistió en investigar y probar  diferentes tecnologías para desarrollar el proyecto tanto hardware como software y una vez hecho se configuraron las máquinas a utilizar y el servidor del CMPL. \\
