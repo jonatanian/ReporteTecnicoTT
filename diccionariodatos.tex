@@ -2,7 +2,8 @@
 
 \begin{table}[htbp!]
 	\begin{center}
-		\begin{tabular}{|l|l|l|}\hline
+		\begin{tabular}{| l | l | l |}\hline 
+		%\multicolumn{•}{•}{•}{p{4cm}|}
 			\textbf{Dato} & \textbf{Resumen} & \textbf{Tipo} \\\hline
 			IdCorrespondencia & Es el identificador consecutivo que tendrá la correspondencia cuando sea registrada. & int \\ \hline
 			FechaEmision & Es la fecha en la cual se emitió el documento. & date \\\hline
@@ -40,6 +41,16 @@ Varchar(35)\\\hline
 			NombreEntidad & Es el nombre de la unidad o el remitente de la unidad externa que se está registrando en la aplicación. & varchar(200)\\\hline
 			CargoEntidad & En caso de que sea una persona la nueva entidad externa se registrará de igual manera el cargo de ésta. & varchar(100) \\\hline
 			EntidadExternaId & Es la llave foránea que hace referencia a la tabla de entidad externa. & int \\\hline
+
+\end{tabular}
+		\caption{Diccionario de Datos parte 1.}
+		\label{Diccionario}
+	\end{center}
+\end{table}
+
+\begin{table}[htbp!]
+	\begin{center}
+		\begin{tabular}{|l | l | l}\hline
 			DependenciaId & Es la llave foránea que hace referencia a la tabla de dependencia. & int\\\hline
 			IdAnexo & Es el identificador del anexo que viene junto con el documento de correspondencia que se registró. & int\\\hline
 			DescripcionAnexo & Es una breve descripción del contenido del anexo que contiene el archivo de correspondencia. & varchar(250)\\\hline
@@ -71,7 +82,7 @@ Varchar(35)\\\hline
 			URLCV & Es la URL de la ubicación del archivo del currículum vitae en el servidor. & varchar(150)\\\hline
 			Activo & Es la bandera que determina si el usuario registrado sigue trabajando en el CMPL o no lo está. & bit\\\hline
 		\end{tabular}
-		\caption{Tabla muy sencilla.}
-		\label{tabla:sencilla}
+		\caption{Diccionario de Datos parte 2.}
+		\label{Diccionario}
 	\end{center}
 \end{table}
