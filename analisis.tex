@@ -2,6 +2,7 @@
 
 \usepackage{cdtBook}
 \usepackage{usecases}
+\usepackage{pdfpages}
 
 \title{Reporte Técnico}
 \subtitle{Aplicación Web de Administración y Control de Oficios y Memorándums del Centro Mexicano para la Producción más Limpia del Instituto Politécnico Nacional (SISA-CMPL)}
@@ -19,6 +20,12 @@
 \tableofcontents
 
 \mainmatter
+
+\includepdf[pages=-]{portadas/PORTADA_DOCUMENTO}
+
+\includepdf[pages=-]{portadas/CARTA_RESPONSIVAF}
+
+\includepdf[pages=-]{portadas/LEYENDA}
 
 %=========================================================
 \chapter{Introducción}
@@ -50,9 +57,11 @@
 
 \cfinput{trabajo}
 
-\cfinput{estados}
+\cfinput{trabajo_2}
 
-%\cfinput{trabajo_2}
+%\cfinput{trabajo_3}
+
+\cfinput{estados}
 
 %=========================================================
 \chapter{Trabajo Realizado}
